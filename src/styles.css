@@ -102,10 +102,10 @@
   --sidebar-border: #1F3528;
   --sidebar-ring: #52B788;
   /* Light palette for bright sections (e.g. homepage) */
-  --cream: #F5F2EA;
-  --cream-soft: #FFFFFF;
+  --cream: #E4EFDD;        /* soft grass field */
+  --cream-soft: #F1F7EC;   /* lighter grass tint */
   --ink: #0F2018;
-  --ink-soft: #4A5A50;
+  --ink-soft: #3F5A48;
 }
 
 .dark {

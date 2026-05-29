@@ -1,23 +1,11 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
+import { useSeo } from "@/lib/seo";
 import { SiteShell } from "@/components/site/SiteShell";
 import { CheckCircle2, Hammer, Sparkles, Star, Wrench, Leaf } from "lucide-react";
 import heroPhoto from "@/assets/photos/home1.png";
 import fencePhoto from "@/assets/photos/home2.png";
 import leafPhoto from "@/assets/photos/home3.png";
 import repairPhoto from "@/assets/photos/repair.png";
-
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Young Man's Lawn Care | Chester VA Lawn Care, Pressure Washing & Engine Repair" },
-      { name: "description", content: "Chester VA's trusted lawn care, pressure washing, and engine repair company. Serving Chesterfield County since 2021. Free estimates." },
-      { property: "og:title", content: "Young Man's Lawn Care | Chester VA" },
-      { property: "og:description", content: "Chester VA's trusted lawn care, pressure washing, and engine repair company since 2021." },
-      { property: "og:image", content: heroPhoto },
-    ],
-  }),
-  component: Home,
-});
 
 const SERVICES = [
   { icon: Leaf, title: "Lawn Care", desc: "Mowing, edging, aeration, fertilization & more", to: "/services/lawn-care" },
@@ -39,7 +27,16 @@ const REVIEWS = [
   { name: "Karen W.", text: "Super responsive and respectful. They treat your yard like it's their own." },
 ];
 
-function Home() {
+export default function Home() {
+  useSeo({
+    title: "Young Man's Lawn Care | Chester VA Lawn Care, Pressure Washing & Engine Repair",
+    description: "Chester VA's trusted lawn care, pressure washing, and engine repair company. Serving Chesterfield County since 2021. Free estimates.",
+    meta: [
+      { property: "og:title", content: "Young Man's Lawn Care | Chester VA" },
+      { property: "og:description", content: "Chester VA's trusted lawn care, pressure washing, and engine repair company since 2021." },
+      { property: "og:image", content: heroPhoto },
+    ],
+  });
   return (
     <SiteShell>
       {/* Hero */}

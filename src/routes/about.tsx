@@ -1,22 +1,18 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { useSeo } from "@/lib/seo";
 import { SiteShell } from "@/components/site/SiteShell";
 import { CreditCard, Heart, MapPin, Wallet } from "lucide-react";
 import jamesPhoto from "@/assets/photos/home1.png";
 
-export const Route = createFileRoute("/about")({
-  head: () => ({
+export default function About() {
+  useSeo({
+    title: "About Young Man's Lawn Care | Chester VA",
+    description: "Started at age 14 in Chester, VA, Young Man's Lawn Care has grown into a trusted local lawn care and property maintenance company serving Chesterfield County.",
     meta: [
-      { title: "About Young Man's Lawn Care | Chester VA" },
-      { name: "description", content: "Started at age 14 in Chester, VA, Young Man's Lawn Care has grown into a trusted local lawn care and property maintenance company serving Chesterfield County." },
       { property: "og:title", content: "About Young Man's Lawn Care | Chester VA" },
       { property: "og:description", content: "The story of James and Young Man's Lawn Care — Chester, VA since 2021." },
       { property: "og:image", content: jamesPhoto },
     ],
-  }),
-  component: About,
-});
-
-function About() {
+  });
   return (
     <SiteShell>
       <section className="border-b border-border bg-grass-radial">

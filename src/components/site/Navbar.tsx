@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { NavLink, Link } from "react-router-dom";
 import { ChevronDown, Phone } from "lucide-react";
 import { LogoPlaceholder } from "./Logo";
 
@@ -25,9 +25,15 @@ export function Navbar() {
         </Link>
 
         <nav className="flex flex-1 items-center justify-center gap-1.5 overflow-x-auto sm:gap-4 lg:gap-8">
-          <Link to="/" className="whitespace-nowrap text-xs font-medium text-brand-white/90 hover:text-accent sm:text-sm" activeOptions={{ exact: true }} activeProps={{ className: "text-accent" }}>
+          <NavLink
+            to="/"
+            end
+            className={({ isActive }) =>
+              `whitespace-nowrap text-xs font-medium hover:text-accent sm:text-sm ${isActive ? "text-accent" : "text-brand-white/90"}`
+            }
+          >
             Home
-          </Link>
+          </NavLink>
           <div className="group relative">
             <button className="flex items-center gap-1 whitespace-nowrap text-xs font-medium text-brand-white/90 hover:text-accent sm:text-sm">
               Services <ChevronDown className="h-3.5 w-3.5 transition-transform duration-200 group-hover:rotate-180 sm:h-4 sm:w-4" />
@@ -43,9 +49,15 @@ export function Navbar() {
             </div>
           </div>
           {NAV.slice(1).map((n) => (
-            <Link key={n.to} to={n.to} className="whitespace-nowrap text-xs font-medium text-brand-white/90 hover:text-accent sm:text-sm" activeProps={{ className: "text-accent" }}>
+            <NavLink
+              key={n.to}
+              to={n.to}
+              className={({ isActive }) =>
+                `whitespace-nowrap text-xs font-medium hover:text-accent sm:text-sm ${isActive ? "text-accent" : "text-brand-white/90"}`
+              }
+            >
               {n.label}
-            </Link>
+            </NavLink>
           ))}
         </nav>
 

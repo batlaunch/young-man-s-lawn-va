@@ -1,18 +1,18 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { useSeo } from "@/lib/seo";
 import { ServicePage } from "@/components/site/ServicePage";
 import lawnPhoto from "@/assets/photos/home3.png";
 
-export const Route = createFileRoute("/services/lawn-care")({
-  head: () => ({
+export default function LawnCare() {
+  useSeo({
+    title: "Lawn Care Services in Chester VA | Young Man's Lawn Care",
+    description: "Affordable lawn mowing, edging, aeration, fertilization, and yard cleanup in Chester and Chesterfield County, VA. Free estimates. Call (808) 382-6129.",
     meta: [
-      { title: "Lawn Care Services in Chester VA | Young Man's Lawn Care" },
-      { name: "description", content: "Affordable lawn mowing, edging, aeration, fertilization, and yard cleanup in Chester and Chesterfield County, VA. Free estimates. Call (808) 382-6129." },
       { property: "og:title", content: "Lawn Care Services in Chester VA" },
       { property: "og:description", content: "Professional lawn maintenance for residential properties in Chesterfield County." },
       { property: "og:image", content: lawnPhoto },
     ],
-  }),
-  component: () => (
+  });
+  return (
     <ServicePage
       title="Lawn Care Services — Chester, VA"
       subtitle="Affordable, professional lawn maintenance for residential properties in Chester and Chesterfield County."
@@ -35,5 +35,5 @@ export const Route = createFileRoute("/services/lawn-care")({
         { service: "Tree & Stump Removal", price: "$20 – $120" },
       ]}
     />
-  ),
-});
+  );
+}

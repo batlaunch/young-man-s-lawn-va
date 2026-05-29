@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { useSeo } from "@/lib/seo";
 import { SiteShell } from "@/components/site/SiteShell";
 import { SamplePhotoBadge } from "@/components/site/SamplePhotoBadge";
 import { Instagram } from "lucide-react";
@@ -6,19 +6,6 @@ import home1 from "@/assets/photos/home1.png";
 import home2 from "@/assets/photos/home2.png";
 import home3 from "@/assets/photos/home3.png";
 import repair from "@/assets/photos/repair.png";
-
-export const Route = createFileRoute("/gallery")({
-  head: () => ({
-    meta: [
-      { title: "Gallery | Young Man's Lawn Care Chester VA" },
-      { name: "description", content: "Browse before and after photos of lawn care, yard cleanups, and property maintenance work by Young Man's Lawn Care in Chester and Chesterfield County, VA." },
-      { property: "og:title", content: "Gallery | Young Man's Lawn Care" },
-      { property: "og:description", content: "Before & afters, cleanups, and lawn transformations across Chester and Chesterfield County." },
-      { property: "og:image", content: home1 },
-    ],
-  }),
-  component: Gallery,
-});
 
 const FEATURED = [
   { src: home1, alt: "James on his riding mower in a Chester VA neighborhood" },
@@ -36,7 +23,16 @@ const GRID = [
   "https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?w=600",
 ];
 
-function Gallery() {
+export default function Gallery() {
+  useSeo({
+    title: "Gallery | Young Man's Lawn Care Chester VA",
+    description: "Browse before and after photos of lawn care, yard cleanups, and property maintenance work by Young Man's Lawn Care in Chester and Chesterfield County, VA.",
+    meta: [
+      { property: "og:title", content: "Gallery | Young Man's Lawn Care" },
+      { property: "og:description", content: "Before & afters, cleanups, and lawn transformations across Chester and Chesterfield County." },
+      { property: "og:image", content: home1 },
+    ],
+  });
   return (
     <SiteShell>
       <section className="border-b border-border bg-grass-radial">

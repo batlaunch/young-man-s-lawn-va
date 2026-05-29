@@ -1,21 +1,9 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
+import { useSeo } from "@/lib/seo";
 import { SiteShell } from "@/components/site/SiteShell";
 import { SocialIcons } from "@/components/site/SocialIcons";
 import { CheckCircle2, CreditCard, Mail, MapPin, Phone } from "lucide-react";
 import reviewQr from "@/assets/photos/contact.png";
-
-export const Route = createFileRoute("/contact")({
-  head: () => ({
-    meta: [
-      { title: "Free Quote | Young Man's Lawn Care Chester VA" },
-      { name: "description", content: "Request a free estimate for lawn care, pressure washing, engine repair, or yard services in Chester and Chesterfield County, VA. Call (808) 382-6129." },
-      { property: "og:title", content: "Free Quote | Young Man's Lawn Care" },
-      { property: "og:description", content: "Get a free estimate for lawn and property services in Chester, VA." },
-    ],
-  }),
-  component: Contact,
-});
 
 const SERVICE_OPTIONS = [
   "Lawn Mowing", "Edging & Trimming", "Leaf Cleanup", "Aeration", "Overseeding",
@@ -24,7 +12,15 @@ const SERVICE_OPTIONS = [
   "Engine Repair", "Small Construction", "Other",
 ];
 
-function Contact() {
+export default function Contact() {
+  useSeo({
+    title: "Free Quote | Young Man's Lawn Care Chester VA",
+    description: "Request a free estimate for lawn care, pressure washing, engine repair, or yard services in Chester and Chesterfield County, VA. Call (808) 382-6129.",
+    meta: [
+      { property: "og:title", content: "Free Quote | Young Man's Lawn Care" },
+      { property: "og:description", content: "Get a free estimate for lawn and property services in Chester, VA." },
+    ],
+  });
   const [sent, setSent] = useState(false);
 
   function onSubmit(e: React.FormEvent<HTMLFormElement>) {

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useSeo } from "@/lib/seo";
 import { SiteShell } from "@/components/site/SiteShell";
+import { DemoBanner } from "@/components/site/DemoBanner";
 import { CheckCircle2, Leaf, Star, TreePine, Hammer, Droplets, Bug, Snowflake } from "lucide-react";
 import heroPhoto from "@/assets/yelp/yelp1.jpg";
 import stormPhoto from "@/assets/yelp/yelp2.jpg";
@@ -56,6 +57,7 @@ export default function Home() {
         </div>
         <div className="mx-auto max-w-7xl px-4 py-24 sm:py-32 lg:px-8 lg:py-40">
           <div className="max-w-3xl fade-in-up rounded-2xl bg-cream/80 p-6 backdrop-blur-sm sm:p-8">
+            <DemoBanner className="mb-6" />
             <p className="mb-4 font-display text-lg italic text-primary">Specialized outdoor land &amp; tree services.</p>
             <h1 className="font-display text-5xl font-bold leading-[1.05] text-ink sm:text-6xl lg:text-7xl">
               <span className="text-gradient-grass">Young Man Land Service</span>

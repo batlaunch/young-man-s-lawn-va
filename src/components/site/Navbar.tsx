@@ -1,7 +1,6 @@
 import { NavLink, Link } from "react-router-dom";
 import { ChevronDown, Phone } from "lucide-react";
 import { LogoPlaceholder } from "./Logo";
-import { ServicesSubNav } from "./ServicesSubNav";
 
 const SERVICES = [
   { to: "/services/lawn-turf", label: "Lawn Care & Turf Management" },
@@ -73,7 +72,6 @@ export function Navbar() {
           </Link>
         </div>
       </div>
-      <ServicesSubNav />
     </header>
   );
 }

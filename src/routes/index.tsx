@@ -50,12 +50,12 @@ export default function Home() {
           <img
             src={heroPhoto}
             alt="Young Man Land Service crew on a job site near Rixeyville, VA"
-            className="h-full w-full object-cover opacity-70"
+            className="h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-cream/40 via-cream/55 to-cream" />
+          <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-cream to-transparent" />
         </div>
         <div className="mx-auto max-w-7xl px-4 py-24 sm:py-32 lg:px-8 lg:py-40">
-          <div className="max-w-3xl fade-in-up">
+          <div className="max-w-3xl fade-in-up rounded-2xl bg-cream/80 p-6 backdrop-blur-sm sm:p-8">
             <p className="mb-4 font-display text-lg italic text-primary">Specialized outdoor land &amp; tree services.</p>
             <h1 className="font-display text-5xl font-bold leading-[1.05] text-ink sm:text-6xl lg:text-7xl">
               <span className="text-gradient-grass">Young Man Land Service</span>

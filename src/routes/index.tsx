@@ -39,7 +39,7 @@ export default function Home() {
     meta: [
       { property: "og:title", content: "Young Man Land Service | Rixeyville, VA" },
       { property: "og:description", content: "Landscaping and tree services in the Rixeyville, VA area. Open 24 hours." },
-      { property: "og:image", content: heroPhoto },
+      { property: "og:image", content: "/og-image.jpg" },
     ],
   });
 

@@ -1,29 +1,18 @@
-## Goal
+Set the storm-damage photo (currently in the Recent Work grid) as the site's Open Graph / link-preview image so it appears when the site is shared on social platforms, iMessage, Slack, etc.
 
-Improve contrast on the homepage by darkening body/heading text to `#1c4332`, and update the H1 gradient so it fades from `#1c4332` into a medium green (not too light).
+Steps:
 
-## Changes
+1. **Copy image to public/** — Copy `src/assets/yelp/yelp2.jpg` (storm damage photo) to `public/og-image.jpg`. This ensures a stable, root-relative URL (`/og-image.jpg`) that survives builds unchanged and is directly accessible to crawlers.
 
-**`src/styles.css`**
+2. **Add meta tags to index.html** — Insert sitewide Open Graph and Twitter Card tags in `<head>`:
+   - `og:title` — site/brand title
+   - `og:description` — site description
+   - `og:image` — `/og-image.jpg`
+   - `og:image:width` / `og:image:height` — actual photo dimensions
+   - `og:image:alt` — descriptive alt text for the storm-damage cleanup
+   - `og:url` — `/`
+   - `og:type` — `website`
+   - `twitter:card` — `summary_large_image`
+   - `twitter:image` — `/og-image.jpg`
 
-1. Update the light-section ink tokens used across the homepage:
-   - `--ink: #1c4332` (was `#0F2018`) — used by `text-ink` on H2s, trust bar items, service card titles, review text.
-   - `--ink-soft: #1c4332` (was `#3F5A48`) — used by `text-ink-soft` on the hero subtitle, section descriptions, service card descriptions. Setting it to the same dark green gives the requested contrast bump; muted feel still preserved via smaller font sizes.
-
-2. Update `.text-gradient-grass` (used only by the H1 on the homepage) to fade from dark to medium green:
-   ```css
-   background: linear-gradient(135deg, #1c4332 0%, #40916c 100%);
-   ```
-   - Start: `#1c4332` (deep forest, matches the new body text)
-   - End: `#40916c` (medium grass green — visible against the cream hero card but not pale)
-
-## Scope
-
-- Only `src/styles.css` is modified.
-- No component files change; all homepage text already uses `text-ink`, `text-ink-soft`, and `.text-gradient-grass`.
-- Dark-themed pages are unaffected — they use `--foreground` / `--brand-white`, not `--ink`.
-
-## Notes
-
-- The `text-primary` italic tagline ("Specialized outdoor land & tree services.") already resolves to `#1B4332`, which is essentially the requested color, so no change needed there.
-- If `#40916c` reads too light against the cream card once previewed, easy follow-up: nudge to `#2d6a4f`.
+3. **Update homepage SEO hook** — In `src/routes/index.tsx`, update the `useSeo` call so its `og:image` meta points to `/og-image.jpg` instead of the Vite-imported `heroPhoto` (hashed asset path).

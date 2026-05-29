@@ -40,29 +40,29 @@ function Home() {
   return (
     <SiteShell>
       {/* Hero */}
-      <section className="relative isolate overflow-hidden">
+      <section className="relative isolate overflow-hidden bg-cream">
         <div className="absolute inset-0 -z-10">
           <img
             src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600"
             alt="Freshly mowed green lawn — Chester VA lawn care"
-            className="h-full w-full object-cover opacity-40"
+            className="h-full w-full object-cover opacity-70"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/60 to-background" />
+          <div className="absolute inset-0 bg-gradient-to-b from-cream/40 via-cream/55 to-cream" />
         </div>
         <div className="mx-auto max-w-7xl px-4 py-24 sm:py-32 lg:px-8 lg:py-40">
           <div className="max-w-3xl fade-in-up">
-            <p className="mb-4 font-display text-lg italic text-accent">We cut grass, not corners.</p>
-            <h1 className="font-display text-5xl font-bold leading-[1.05] text-brand-white sm:text-6xl lg:text-7xl">
+            <p className="mb-4 font-display text-lg italic text-primary">We cut grass, not corners.</p>
+            <h1 className="font-display text-5xl font-bold leading-[1.05] text-ink sm:text-6xl lg:text-7xl">
               Chester's Trusted <span className="text-gradient-grass">Lawn Care</span> Professionals
             </h1>
-            <p className="mt-6 max-w-xl text-lg text-muted-foreground">
+            <p className="mt-6 max-w-xl text-lg text-ink-soft">
               Serving Chester, VA and surrounding Chesterfield County areas since 2021.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
-              <Link to="/contact" className="rounded-full bg-accent px-7 py-3 text-base font-bold text-accent-foreground transition-all hover:bg-accent-light hover:shadow-glow">
+              <Link to="/contact" className="rounded-full bg-primary px-7 py-3 text-base font-bold text-brand-white transition-all hover:bg-accent hover:text-accent-foreground hover:shadow-glow">
                 Get a Free Quote
               </Link>
-              <Link to="/gallery" className="rounded-full border-2 border-brand-white/40 px-7 py-3 text-base font-semibold text-brand-white transition-colors hover:border-accent hover:text-accent">
+              <Link to="/gallery" className="rounded-full border-2 border-primary/40 px-7 py-3 text-base font-semibold text-primary transition-colors hover:border-primary hover:bg-primary hover:text-brand-white">
                 See Our Work
               </Link>
             </div>
@@ -71,42 +71,44 @@ function Home() {
       </section>
 
       {/* Trust bar */}
-      <section className="border-y border-border bg-surface">
+      <section className="border-y border-primary/15 bg-cream-soft">
         <div className="mx-auto grid max-w-7xl gap-4 px-4 py-6 sm:grid-cols-2 lg:grid-cols-4 lg:px-8">
           {TRUST.map((t) => (
-            <div key={t} className="flex items-center gap-2 text-sm text-brand-white/90">
-              <CheckCircle2 className="h-5 w-5 text-accent" /> {t}
+            <div key={t} className="flex items-center gap-2 text-sm text-ink">
+              <CheckCircle2 className="h-5 w-5 text-primary" /> {t}
             </div>
           ))}
         </div>
       </section>
 
       {/* Services */}
-      <section className="mx-auto max-w-7xl px-4 py-20 lg:px-8">
-        <div className="mb-12 text-center">
-          <h2 className="font-display text-4xl font-bold text-brand-white sm:text-5xl">Everything Your Property Needs</h2>
-          <p className="mt-3 text-muted-foreground">One trusted team for lawn, exterior, and equipment work.</p>
-        </div>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {SERVICES.map(({ icon: Icon, title, desc, to }) => (
-            <Link
-              key={title}
-              to={to}
-              className="group relative overflow-hidden rounded-2xl border border-border border-l-4 border-l-accent bg-surface p-6 transition-all hover:-translate-y-1 hover:shadow-glow"
-            >
-              <Icon className="h-9 w-9 text-accent" />
-              <h3 className="mt-4 font-display text-xl font-semibold text-brand-white">{title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{desc}</p>
-              <span className="mt-4 inline-block text-sm font-medium text-accent group-hover:text-accent-light">Learn more →</span>
-            </Link>
-          ))}
+      <section className="bg-cream">
+        <div className="mx-auto max-w-7xl px-4 py-20 lg:px-8">
+          <div className="mb-12 text-center">
+            <h2 className="font-display text-4xl font-bold text-ink sm:text-5xl">Everything Your Property Needs</h2>
+            <p className="mt-3 text-ink-soft">One trusted team for lawn, exterior, and equipment work.</p>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {SERVICES.map(({ icon: Icon, title, desc, to }) => (
+              <Link
+                key={title}
+                to={to}
+                className="group relative overflow-hidden rounded-2xl border border-primary/15 border-l-4 border-l-primary bg-cream-soft p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-glow"
+              >
+                <Icon className="h-9 w-9 text-primary" />
+                <h3 className="mt-4 font-display text-xl font-semibold text-ink">{title}</h3>
+                <p className="mt-2 text-sm text-ink-soft">{desc}</p>
+                <span className="mt-4 inline-block text-sm font-medium text-primary group-hover:text-accent">Learn more →</span>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Before/After */}
-      <section className="border-y border-border bg-surface/40">
+      <section className="border-y border-primary/15 bg-cream-soft">
         <div className="mx-auto max-w-7xl px-4 py-20 lg:px-8">
-          <h2 className="text-center font-display text-4xl font-bold text-brand-white sm:text-5xl">The Young Man's Difference</h2>
+          <h2 className="text-center font-display text-4xl font-bold text-ink sm:text-5xl">The Young Man's Difference</h2>
           <div className="mt-10 grid gap-8 md:grid-cols-2">
             {[
               { before: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800", after: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800" },
@@ -118,7 +120,7 @@ function Home() {
               </div>
             ))}
           </div>
-          <p className="mt-6 text-center text-xs italic text-muted-foreground">(Sample photos — real project photos will be featured here)</p>
+          <p className="mt-6 text-center text-xs italic text-ink-soft">(Sample photos — real project photos will be featured here)</p>
         </div>
       </section>
 
@@ -131,27 +133,29 @@ function Home() {
       </section>
 
       {/* Reviews */}
-      <section className="mx-auto max-w-7xl px-4 py-20 lg:px-8">
-        <h2 className="text-center font-display text-4xl font-bold text-brand-white sm:text-5xl">What Our Customers Are Saying</h2>
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
-          {REVIEWS.map((r) => (
-            <div key={r.name} className="rounded-2xl border border-border bg-surface p-6">
-              <div className="flex gap-0.5">
-                {Array.from({ length: 5 }).map((_, i) => <Star key={i} className="h-4 w-4 fill-accent text-accent" />)}
+      <section className="bg-cream">
+        <div className="mx-auto max-w-7xl px-4 py-20 lg:px-8">
+          <h2 className="text-center font-display text-4xl font-bold text-ink sm:text-5xl">What Our Customers Are Saying</h2>
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {REVIEWS.map((r) => (
+              <div key={r.name} className="rounded-2xl border border-primary/15 bg-cream-soft p-6 shadow-sm">
+                <div className="flex gap-0.5">
+                  {Array.from({ length: 5 }).map((_, i) => <Star key={i} className="h-4 w-4 fill-primary text-primary" />)}
+                </div>
+                <p className="mt-4 text-sm text-ink">"{r.text}"</p>
+                <p className="mt-4 text-sm font-semibold text-primary">— {r.name}</p>
               </div>
-              <p className="mt-4 text-sm text-brand-white/90">"{r.text}"</p>
-              <p className="mt-4 text-sm font-semibold text-accent">— {r.name}</p>
-            </div>
-          ))}
+            ))}
+          </div>
+          <p className="mt-6 text-center text-xs italic text-ink-soft">(Customer reviews will be featured here)</p>
         </div>
-        <p className="mt-6 text-center text-xs italic text-muted-foreground">(Customer reviews will be featured here)</p>
       </section>
 
       {/* Footer CTA */}
-      <section className="border-t border-border bg-background">
+      <section className="border-t border-primary/20 bg-cream-soft">
         <div className="mx-auto max-w-3xl px-4 py-20 text-center lg:px-8">
-          <h2 className="font-display text-4xl font-bold text-brand-white sm:text-5xl">Ready for a lawn you're proud of?</h2>
-          <Link to="/contact" className="mt-8 inline-block rounded-full bg-accent px-8 py-3.5 text-base font-bold text-accent-foreground transition-all hover:bg-accent-light hover:shadow-glow">
+          <h2 className="font-display text-4xl font-bold text-ink sm:text-5xl">Ready for a lawn you're proud of?</h2>
+          <Link to="/contact" className="mt-8 inline-block rounded-full bg-primary px-8 py-3.5 text-base font-bold text-brand-white transition-all hover:bg-accent hover:text-accent-foreground hover:shadow-glow">
             Request Your Free Quote
           </Link>
         </div>

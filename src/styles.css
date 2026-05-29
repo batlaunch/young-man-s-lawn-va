@@ -55,6 +55,10 @@
   --color-surface: var(--surface);
   --color-accent-light: var(--accent-light);
   --color-brand-white: var(--brand-white);
+  --color-cream: var(--cream);
+  --color-cream-soft: var(--cream-soft);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
   --font-display: "Playfair Display", Georgia, serif;
   --font-sans: "DM Sans", system-ui, sans-serif;
 }
@@ -97,6 +101,11 @@
   --sidebar-accent-foreground: #F8FAF8;
   --sidebar-border: #1F3528;
   --sidebar-ring: #52B788;
+  /* Light palette for bright sections (e.g. homepage) */
+  --cream: #F5F2EA;
+  --cream-soft: #FFFFFF;
+  --ink: #0F2018;
+  --ink-soft: #4A5A50;
 }
 
 .dark {

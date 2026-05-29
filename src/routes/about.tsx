@@ -8,7 +8,7 @@ export const Route = createFileRoute("/about")({
       { title: "About Young Man's Lawn Care | Chester VA" },
       { name: "description", content: "Started at age 14 in Chester, VA, Young Man's Lawn Care has grown into a trusted local lawn care and property maintenance company serving Chesterfield County." },
       { property: "og:title", content: "About Young Man's Lawn Care | Chester VA" },
-      { property: "og:description", content: "The story of Justin and Young Man's Lawn Care — Chester, VA since 2021." },
+      { property: "og:description", content: "The story of James and Young Man's Lawn Care — Chester, VA since 2021." },
       { property: "og:image", content: "https://images.unsplash.com/photo-1589923188651-268a9765e432?w=1200" },
     ],
   }),
@@ -29,9 +29,9 @@ function About() {
       <section className="mx-auto max-w-7xl px-4 py-20 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div className="space-y-5 text-brand-white/90">
-            <p>At 14 years old, Justin had a simple goal — he wanted to work, earn his own money, and build something for himself. The problem? Nobody would hire him. Too young, they said.</p>
+            <p>At 14 years old, James had a simple goal — he wanted to work, earn his own money, and build something for himself. The problem? Nobody would hire him. Too young, they said.</p>
             <p>Rather than give up, he picked up a mower and started Young Man's Lawn Care in 2021. What began as a teenager doing yard work in his neighborhood has grown into a trusted local business serving Chester, Virginia and the surrounding Chesterfield County area.</p>
-            <p>Today, Young Man's Lawn Care offers a full range of services — from weekly lawn maintenance and seasonal cleanups to pressure washing, small engine repair, and minor construction projects. Justin has built the business on one simple belief: treat every customer's property like your own.</p>
+            <p>Today, Young Man's Lawn Care offers a full range of services — from weekly lawn maintenance and seasonal cleanups to pressure washing, small engine repair, and minor construction projects. James has built the business on one simple belief: treat every customer's property like your own.</p>
             <p className="font-display text-2xl italic text-accent">"We cut grass, not corners."</p>
           </div>
           <div className="relative overflow-hidden rounded-3xl border border-border">

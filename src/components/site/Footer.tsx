@@ -29,8 +29,8 @@ export function Footer() {
         <div>
           <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-brand-white">Connect</h4>
           <ul className="space-y-2 text-sm text-muted-foreground">
-            <li><a href="tel:+18045550123" className="flex items-center gap-2 hover:text-accent"><Phone className="h-4 w-4" /> (804) 555-0123</a></li>
-            <li><a href="mailto:info@youngmanslawnva.com" className="flex items-center gap-2 hover:text-accent"><Mail className="h-4 w-4" /> info@youngmanslawnva.com</a></li>
+            <li><a href="tel:+18083826129" className="flex items-center gap-2 hover:text-accent"><Phone className="h-4 w-4" /> (808) 382-6129</a></li>
+            <li><a href="mailto:james.kissiar@gmail.com" className="flex items-center gap-2 hover:text-accent"><Mail className="h-4 w-4" /> james.kissiar@gmail.com</a></li>
           </ul>
           <div className="mt-4"><SocialIcons /></div>
           <p className="mt-5 text-xs text-muted-foreground">Payments: <span className="text-brand-white">Credit Card · Venmo · Zelle</span></p>

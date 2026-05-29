@@ -31,7 +31,7 @@ const TRUST = [
 ];
 
 const REVIEWS = [
-  { name: "Sarah M.", text: "Justin and his crew transformed our overgrown backyard in a single afternoon. Worth every penny." },
+  { name: "Sarah M.", text: "James and his crew transformed our overgrown backyard in a single afternoon. Worth every penny." },
   { name: "David R.", text: "Honest pricing, on time, and the lawn has never looked better. Highly recommend." },
   { name: "Karen W.", text: "Super responsive and respectful. They treat your yard like it's their own." },
 ];

@@ -5,7 +5,7 @@ export const Route = createFileRoute("/services/engine-repair")({
   head: () => ({
     meta: [
       { title: "Small Engine Repair Chester VA | Young Man's Lawn Care" },
-      { name: "description", content: "Lawn mower tune-ups, carburetor repair, blade sharpening, and small engine maintenance in Chester, VA. Affordable rates. Call (804) 555-0123." },
+      { name: "description", content: "Lawn mower tune-ups, carburetor repair, blade sharpening, and small engine maintenance in Chester, VA. Affordable rates. Call (808) 382-6129." },
       { property: "og:title", content: "Small Engine Repair Chester VA" },
       { property: "og:description", content: "Keep your lawn equipment running like new." },
     ],

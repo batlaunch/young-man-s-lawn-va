@@ -73,7 +73,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Young Man's Lawn Care | Chester VA | Lawn Care, Pressure Washing & Engine Repair" },
-      { name: "description", content: "Young Man's Lawn Care offers professional lawn mowing, edging, aeration, pressure washing, engine repair, and yard services in Chester, VA and Chesterfield County. Free estimates. Call (804) 555-0123." },
+      { name: "description", content: "Young Man's Lawn Care offers professional lawn mowing, edging, aeration, pressure washing, engine repair, and yard services in Chester, VA and Chesterfield County. Free estimates. Call (808) 382-6129." },
       { name: "keywords", content: "lawn care Chester VA, lawn mowing Chester Virginia, Chesterfield County lawn care, pressure washing Chester VA, engine repair Chester VA, yard cleanup Chester, affordable lawn care Virginia, lawn aeration Chesterfield, Young Man's Lawn Care" },
       { name: "author", content: "Young Man's Lawn Care" },
       { property: "og:title", content: "Young Man's Lawn Care | Chester VA" },

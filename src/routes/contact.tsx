@@ -8,7 +8,7 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Free Quote | Young Man's Lawn Care Chester VA" },
-      { name: "description", content: "Request a free estimate for lawn care, pressure washing, engine repair, or yard services in Chester and Chesterfield County, VA. Call (804) 555-0123." },
+      { name: "description", content: "Request a free estimate for lawn care, pressure washing, engine repair, or yard services in Chester and Chesterfield County, VA. Call (808) 382-6129." },
       { property: "og:title", content: "Free Quote | Young Man's Lawn Care" },
       { property: "og:description", content: "Get a free estimate for lawn and property services in Chester, VA." },
     ],
@@ -77,8 +77,8 @@ function Contact() {
             <div className="rounded-3xl border border-border bg-surface p-6">
               <h2 className="font-display text-2xl font-semibold text-brand-white">Contact Info</h2>
               <ul className="mt-5 space-y-3 text-sm text-brand-white/90">
-                <li><a href="tel:+18045550123" className="flex items-center gap-3 hover:text-accent"><Phone className="h-5 w-5 text-accent" /> (804) 555-0123</a></li>
-                <li><a href="mailto:info@youngmanslawnva.com" className="flex items-center gap-3 hover:text-accent"><Mail className="h-5 w-5 text-accent" /> info@youngmanslawnva.com</a></li>
+                <li><a href="tel:+18083826129" className="flex items-center gap-3 hover:text-accent"><Phone className="h-5 w-5 text-accent" /> (808) 382-6129</a></li>
+                <li><a href="mailto:james.kissiar@gmail.com" className="flex items-center gap-3 hover:text-accent"><Mail className="h-5 w-5 text-accent" /> james.kissiar@gmail.com</a></li>
                 <li className="flex items-start gap-3"><MapPin className="h-5 w-5 shrink-0 text-accent" /> Chester, VA 23831 — Serving Chesterfield County & surrounding areas</li>
               </ul>
               <div className="mt-6">

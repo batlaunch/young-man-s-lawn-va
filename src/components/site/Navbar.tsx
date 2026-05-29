@@ -48,7 +48,7 @@ export function Navbar() {
         </nav>
 
         <div className="flex shrink-0 items-center gap-3">
-          <a href="tel:+18045550123" aria-label="Call" className="text-brand-white/90 hover:text-accent sm:hidden">
+          <a href="tel:+18083826129" aria-label="Call" className="text-brand-white/90 hover:text-accent sm:hidden">
             <Phone className="h-5 w-5" />
           </a>
           <Link to="/contact" className="hidden whitespace-nowrap rounded-full bg-accent px-4 py-2 text-sm font-bold text-accent-foreground transition-all hover:bg-accent-light hover:shadow-glow sm:inline-block">

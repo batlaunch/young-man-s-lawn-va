@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { useSeo } from "@/lib/seo";
 import { SiteShell } from "@/components/site/SiteShell";
-import { ServicesSubNav } from "@/components/site/ServicesSubNav";
 import { Leaf, TreePine, Hammer, Droplets, Bug, Snowflake } from "lucide-react";
 
 const ITEMS = [
@@ -31,7 +30,6 @@ export default function ServicesIndex() {
           <p className="mt-4 text-lg text-muted-foreground">Specialized outdoor land and tree services in the Rixeyville, VA area.</p>
         </div>
       </section>
-      <ServicesSubNav />
       <section className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
         <div className="grid gap-6 sm:grid-cols-2">
           {ITEMS.map(({ to, icon: Icon, title, desc }) => (

@@ -32,6 +32,8 @@ export function ServicePage(props: {
         </section>
       )}
 
+      <ServicesSubNav />
+
       <section className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
         {prices && (
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

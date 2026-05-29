@@ -16,7 +16,7 @@ export default function Irrigation() {
       imageAlt="Irrigation systems"
       ctaLabel="Request Pricing & Availability"
       bullets={[
-        "16. Irrigation installation & maintenance",
+        { title: "16. Irrigation installation & maintenance", description: "Sprinkler system setup, repairs, and seasonal startups/shutdowns." },
       ]}
       note="Pricing varies by system size. Contact for a quote. [FILLER PRICING]"
     />

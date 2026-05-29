@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { SiteShell } from "./SiteShell";
+import { ServicesSubNav } from "./ServicesSubNav";
 
 export type PriceRow = { service: string; price: string };
 
@@ -22,6 +23,8 @@ export function ServicePage(props: {
           <p className="mt-4 max-w-3xl text-lg italic text-muted-foreground">{subtitle}</p>
         </div>
       </section>
+
+      <ServicesSubNav />
 
       {heroImage && (
         <section className="mx-auto max-w-7xl px-4 pt-10 lg:px-8">

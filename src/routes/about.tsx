@@ -1,24 +1,26 @@
 import { useSeo } from "@/lib/seo";
 import { SiteShell } from "@/components/site/SiteShell";
 import { CreditCard, Heart, MapPin, Wallet } from "lucide-react";
-import jamesPhoto from "@/assets/photos/home1.png";
+import aboutPhoto from "@/assets/yelp/yelp1.jpg";
 
 export default function About() {
   useSeo({
-    title: "About Young Man's Lawn Care | Chester VA",
-    description: "Started at age 14 in Chester, VA, Young Man's Lawn Care has grown into a trusted local lawn care and property maintenance company serving Chesterfield County.",
+    title: "About | Young Man Land Service — Rixeyville VA",
+    description:
+      "Young Man Land Service offers specialized outdoor land and tree services in the Rixeyville, VA area.",
     meta: [
-      { property: "og:title", content: "About Young Man's Lawn Care | Chester VA" },
-      { property: "og:description", content: "The story of James and Young Man's Lawn Care — Chester, VA since 2021." },
-      { property: "og:image", content: jamesPhoto },
+      { property: "og:title", content: "About | Young Man Land Service" },
+      { property: "og:description", content: "Specialized outdoor land and tree services — Rixeyville, VA." },
+      { property: "og:image", content: aboutPhoto },
     ],
   });
+
   return (
     <SiteShell>
       <section className="border-b border-border bg-grass-radial">
         <div className="mx-auto max-w-7xl px-4 py-20 lg:px-8 lg:py-28">
           <h1 className="font-display text-4xl font-bold text-brand-white sm:text-5xl lg:text-6xl">
-            The Story Behind <span className="text-gradient-grass">Young Man's Lawn Care</span>
+            About <span className="text-gradient-grass">Young Man Land Service</span>
           </h1>
         </div>
       </section>
@@ -26,13 +28,21 @@ export default function About() {
       <section className="mx-auto max-w-7xl px-4 py-20 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div className="space-y-5 text-brand-white/90">
-            <p>At 14 years old, James had a simple goal — he wanted to work, earn his own money, and build something for himself. The problem? Nobody would hire him. Too young, they said.</p>
-            <p>Rather than give up, he picked up a mower and started Young Man's Lawn Care in 2021. What began as a teenager doing yard work in his neighborhood has grown into a trusted local business serving Chester, Virginia and the surrounding Chesterfield County area.</p>
-            <p>Today, Young Man's Lawn Care offers a full range of services — from weekly lawn maintenance and seasonal cleanups to pressure washing, small engine repair, and minor construction projects. James has built the business on one simple belief: treat every customer's property like your own.</p>
-            <p className="font-display text-2xl italic text-accent">"We cut grass, not corners."</p>
+            {/* Source: Yelp business description */}
+            <p>
+              I offer assistance with outdoor tasks that require specialized outdoor land and tree services.
+            </p>
+            <p>
+              My aim is to maintain a profitable business while being mindful of your budget. I am dedicated
+              to delivering exceptional service to ensure your complete satisfaction.
+            </p>
+            <p className="text-sm italic text-muted-foreground">
+              [FILLER — additional history, team details, and founding year are not published on the Yelp profile. Add real
+              background here when ready.]
+            </p>
           </div>
           <div className="relative overflow-hidden rounded-3xl border border-border">
-            <img src={jamesPhoto} alt="James of Young Man's Lawn Care on his riding mower in a Chester VA neighborhood" className="h-full w-full object-cover" />
+            <img src={aboutPhoto} alt="Young Man Land Service in the Rixeyville, VA area" className="h-full w-full object-cover" />
           </div>
         </div>
       </section>
@@ -42,9 +52,9 @@ export default function About() {
           <h2 className="text-center font-display text-3xl font-bold text-brand-white sm:text-4xl">Why Choose Us</h2>
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {[
-              { icon: Heart, title: "Personalized Service", desc: "Every client is treated with respect. You're not a number." },
-              { icon: Wallet, title: "Affordable Pricing", desc: "Fair rates with free estimates on every job." },
-              { icon: MapPin, title: "Local & Trusted", desc: "Chester-based, community-focused, since 2021." },
+              { icon: Heart, title: "Specialized Service", desc: "Outdoor land and tree work, done with care." },
+              { icon: Wallet, title: "Budget-Mindful", desc: "Fair pricing that respects your project budget." },
+              { icon: MapPin, title: "Local to Rixeyville", desc: "Serving the Rixeyville, VA area." },
             ].map(({ icon: Icon, title, desc }) => (
               <div key={title} className="rounded-2xl border border-border bg-surface p-6 text-center">
                 <Icon className="mx-auto h-9 w-9 text-accent" />
@@ -59,7 +69,7 @@ export default function About() {
       <section className="mx-auto max-w-7xl px-4 py-16 text-center lg:px-8">
         <h2 className="font-display text-2xl font-semibold text-brand-white">Payments Accepted</h2>
         <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
-          {["Credit Card", "Venmo", "Zelle"].map((p) => (
+          {["Cash", "Zelle", "Cash App", "Cryptocurrency"].map((p) => (
             <span key={p} className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-2 text-sm text-brand-white">
               <CreditCard className="h-4 w-4 text-accent" /> {p}
             </span>

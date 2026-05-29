@@ -1,39 +1,32 @@
 import { useSeo } from "@/lib/seo";
 import { ServicePage } from "@/components/site/ServicePage";
-import lawnPhoto from "@/assets/photos/home3.png";
+import lawnPhoto from "@/assets/yelp/yelp3.jpg";
 
 export default function LawnCare() {
   useSeo({
-    title: "Lawn Care Services in Chester VA | Young Man's Lawn Care",
-    description: "Affordable lawn mowing, edging, aeration, fertilization, and yard cleanup in Chester and Chesterfield County, VA. Free estimates. Call (808) 382-6129.",
+    title: "Lawn Care | Young Man Land Service — Rixeyville VA",
+    description:
+      "Lawn care serving the Rixeyville, VA area by Young Man Land Service.",
     meta: [
-      { property: "og:title", content: "Lawn Care Services in Chester VA" },
-      { property: "og:description", content: "Professional lawn maintenance for residential properties in Chesterfield County." },
+      { property: "og:title", content: "Lawn Care | Young Man Land Service" },
+      { property: "og:description", content: "Lawn care in the Rixeyville, VA area." },
       { property: "og:image", content: lawnPhoto },
     ],
   });
   return (
     <ServicePage
-      title="Lawn Care Services — Chester, VA"
-      subtitle="Affordable, professional lawn maintenance for residential properties in Chester and Chesterfield County."
+      title="Lawn Care — Rixeyville, VA"
+      subtitle="Lawn maintenance for residential properties in the Rixeyville area."
       heroImage={lawnPhoto}
-      imageAlt="James of Young Man's Lawn Care doing fall leaf cleanup in Chester VA"
-      ctaLabel="Get a Free Quote"
-      prices={[
-        { service: "Lawn Mowing", price: "$40 – $100 per service (varies by lawn size)" },
-        { service: "Edging & Trimming", price: "$20 – $50 per service" },
-        { service: "Leaf Blowing & Cleanup", price: "$50 – $150 per service" },
-        { service: "Lawn Aeration", price: "$50 – $200 per service" },
-        { service: "Overseeding", price: "$100 – $300 per service" },
-        { service: "Fertilization", price: "$50 – $150 per application" },
-        { service: "Weed Control & Treatment", price: "$50 – $200 per application" },
-        { service: "Mulching", price: "$0.50 – $1.50 per sq ft" },
-        { service: "Hedge & Shrub Trimming/Removal", price: "$50 – $200 per service" },
-        { service: "Yard Cleanup (Spring/Fall)", price: "$100 – $500 per service" },
-        { service: "Gutter Cleaning", price: "$75 – $250 per service" },
-        { service: "Storm Cleanup & Debris Removal", price: "$100 – $500 per service" },
-        { service: "Tree & Stump Removal", price: "$20 – $120" },
+      imageAlt="Lawn care work by Young Man Land Service in the Rixeyville, VA area"
+      ctaLabel="Request Pricing & Availability"
+      bullets={[
+        "Lawn mowing",
+        "Edging & trimming",
+        "Seasonal yard upkeep",
+        "Leaf removal",
       ]}
+      note="Pricing is not published on the Yelp profile. Contact for a quote — [FILLER] price ranges are not shown so quotes are job-by-job."
     />
   );
 }

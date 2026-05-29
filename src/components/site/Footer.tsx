@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone } from "lucide-react";
+import { Clock, MapPin } from "lucide-react";
 import { LogoPlaceholder } from "./Logo";
 import { SocialIcons } from "./SocialIcons";
 
@@ -9,18 +9,19 @@ export function Footer() {
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 md:grid-cols-3 lg:px-8">
         <div>
           <LogoPlaceholder small />
-          <p className="mt-4 font-display italic text-accent">"We cut grass, not corners."</p>
+          <p className="mt-4 font-display italic text-accent">Specialized outdoor land &amp; tree services.</p>
           <p className="mt-3 text-sm text-muted-foreground">
-            Chester, VA's trusted lawn care, pressure washing, and engine repair company. Serving Chesterfield County since 2021.
+            Young Man Land Service — landscaping and tree services in the Rixeyville, VA area.
           </p>
         </div>
         <div>
           <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-brand-white">Quick Links</h4>
           <ul className="space-y-2 text-sm text-muted-foreground">
             <li><Link to="/" className="hover:text-accent">Home</Link></li>
-            <li><Link to="/services/lawn-care" className="hover:text-accent">Lawn Care Services</Link></li>
-            <li><Link to="/services/engine-repair" className="hover:text-accent">Engine Repair</Link></li>
-            <li><Link to="/services/pressure-washing" className="hover:text-accent">Pressure Washing</Link></li>
+            <li><Link to="/services/lawn-care" className="hover:text-accent">Lawn Care</Link></li>
+            <li><Link to="/services/tree-services" className="hover:text-accent">Tree Services</Link></li>
+            <li><Link to="/services/storm-cleanup" className="hover:text-accent">Storm Damage Cleanup</Link></li>
+            <li><Link to="/services/greenscape" className="hover:text-accent">Greenscape Construction</Link></li>
             <li><Link to="/about" className="hover:text-accent">About</Link></li>
             <li><Link to="/gallery" className="hover:text-accent">Gallery</Link></li>
             <li><Link to="/contact" className="hover:text-accent">Contact</Link></li>
@@ -29,16 +30,16 @@ export function Footer() {
         <div>
           <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-brand-white">Connect</h4>
           <ul className="space-y-2 text-sm text-muted-foreground">
-            <li><a href="tel:+18083826129" className="flex items-center gap-2 hover:text-accent"><Phone className="h-4 w-4" /> (808) 382-6129</a></li>
-            <li><a href="mailto:james.kissiar@gmail.com" className="flex items-center gap-2 hover:text-accent"><Mail className="h-4 w-4" /> james.kissiar@gmail.com</a></li>
+            <li className="flex items-center gap-2"><MapPin className="h-4 w-4 text-accent" /> Serving Rixeyville, VA</li>
+            <li className="flex items-center gap-2"><Clock className="h-4 w-4 text-accent" /> Open 24 hours · 7 days</li>
           </ul>
           <div className="mt-4"><SocialIcons /></div>
-          <p className="mt-5 text-xs text-muted-foreground">Payments: <span className="text-brand-white">Credit Card · Venmo · Zelle</span></p>
+          <p className="mt-5 text-xs text-muted-foreground">Payments: <span className="text-brand-white">Cash · Zelle · Cash App · Crypto</span></p>
         </div>
       </div>
       <div className="border-t border-border">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-4 py-5 text-xs text-muted-foreground md:flex-row lg:px-8">
-          <p>© 2025 Young Man's Lawn Care · Chester, VA · YoungMansLawnVA.com</p>
+          <p>© 2025 Young Man Land Service · Rixeyville, VA</p>
           <p className="italic">Website built for demo purposes</p>
         </div>
       </div>

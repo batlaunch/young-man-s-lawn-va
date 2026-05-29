@@ -1,42 +1,45 @@
 import { Link } from "react-router-dom";
 import { useSeo } from "@/lib/seo";
 import { SiteShell } from "@/components/site/SiteShell";
-import { CheckCircle2, Hammer, Sparkles, Star, Wrench, Leaf } from "lucide-react";
-import heroPhoto from "@/assets/photos/home1.png";
-import fencePhoto from "@/assets/photos/home2.png";
-import leafPhoto from "@/assets/photos/home3.png";
-import repairPhoto from "@/assets/photos/repair.png";
+import { CheckCircle2, Leaf, Sparkles, Star, TreePine, Wrench } from "lucide-react";
+import heroPhoto from "@/assets/yelp/yelp1.jpg";
+import stormPhoto from "@/assets/yelp/yelp2.jpg";
+import workPhoto from "@/assets/yelp/yelp3.jpg";
+import treePhoto from "@/assets/yelp/yelp4.jpg";
 
 const SERVICES = [
-  { icon: Leaf, title: "Lawn Care", desc: "Mowing, edging, aeration, fertilization & more", to: "/services/lawn-care" },
-  { icon: Sparkles, title: "Pressure Washing", desc: "Driveways, siding, decks, and patios", to: "/services/pressure-washing" },
-  { icon: Wrench, title: "Engine Repair", desc: "Tune-ups, blade sharpening, carburetor work", to: "/services/engine-repair" },
-  { icon: Hammer, title: "Small Construction", desc: "Yard projects and property improvements", to: "/services/small-construction" },
+  { icon: Leaf, title: "Lawn Care", desc: "Mowing, maintenance, and yard upkeep", to: "/services/lawn-care" },
+  { icon: TreePine, title: "Tree Services", desc: "Tree care plus disease & insect management", to: "/services/tree-services" },
+  { icon: Sparkles, title: "Storm Damage Cleanup", desc: "After-storm debris removal — open 24 hours", to: "/services/storm-cleanup" },
+  { icon: Wrench, title: "Greenscape Construction", desc: "Outdoor land and property projects", to: "/services/greenscape" },
 ];
 
 const TRUST = [
-  "Established 2021",
-  "Serving Chester & Chesterfield County",
-  "Free Estimates",
-  "Credit Card · Venmo · Zelle Accepted",
+  "Serving the Rixeyville, VA area",
+  "Open 24 hours, 7 days a week",
+  "5.0 stars on Yelp",
+  "Cash · Zelle · Cash App · Crypto",
 ];
 
+// [FILLER] — Yelp shows only 1 review with no review text published. These are placeholders.
 const REVIEWS = [
-  { name: "Sarah M.", text: "James and his crew transformed our overgrown backyard in a single afternoon. Worth every penny." },
-  { name: "David R.", text: "Honest pricing, on time, and the lawn has never looked better. Highly recommend." },
-  { name: "Karen W.", text: "Super responsive and respectful. They treat your yard like it's their own." },
+  { name: "[Customer name — filler]", text: "[Sample testimonial — replace with a real customer quote once available.]" },
+  { name: "[Customer name — filler]", text: "[Sample testimonial — replace with a real customer quote once available.]" },
+  { name: "[Customer name — filler]", text: "[Sample testimonial — replace with a real customer quote once available.]" },
 ];
 
 export default function Home() {
   useSeo({
-    title: "Young Man's Lawn Care | Chester VA Lawn Care, Pressure Washing & Engine Repair",
-    description: "Chester VA's trusted lawn care, pressure washing, and engine repair company. Serving Chesterfield County since 2021. Free estimates.",
+    title: "Young Man Land Service | Landscaping & Tree Services — Rixeyville, VA",
+    description:
+      "Young Man Land Service offers lawn care, tree services, storm damage cleanup, and greenscape construction serving the Rixeyville, VA area. Open 24 hours.",
     meta: [
-      { property: "og:title", content: "Young Man's Lawn Care | Chester VA" },
-      { property: "og:description", content: "Chester VA's trusted lawn care, pressure washing, and engine repair company since 2021." },
+      { property: "og:title", content: "Young Man Land Service | Rixeyville, VA" },
+      { property: "og:description", content: "Landscaping and tree services in the Rixeyville, VA area. Open 24 hours." },
       { property: "og:image", content: heroPhoto },
     ],
   });
+
   return (
     <SiteShell>
       {/* Hero */}
@@ -44,23 +47,23 @@ export default function Home() {
         <div className="absolute inset-0 -z-10">
           <img
             src={heroPhoto}
-            alt="James of Young Man's Lawn Care on his riding mower in a Chester VA neighborhood"
+            alt="Young Man Land Service crew on a job site near Rixeyville, VA"
             className="h-full w-full object-cover opacity-70"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-cream/40 via-cream/55 to-cream" />
         </div>
         <div className="mx-auto max-w-7xl px-4 py-24 sm:py-32 lg:px-8 lg:py-40">
           <div className="max-w-3xl fade-in-up">
-            <p className="mb-4 font-display text-lg italic text-primary">We cut grass, not corners.</p>
+            <p className="mb-4 font-display text-lg italic text-primary">Specialized outdoor land &amp; tree services.</p>
             <h1 className="font-display text-5xl font-bold leading-[1.05] text-ink sm:text-6xl lg:text-7xl">
-              Chester's Trusted <span className="text-gradient-grass">Lawn Care</span> Professionals
+              <span className="text-gradient-grass">Young Man Land Service</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg text-ink-soft">
-              Serving Chester, VA and surrounding Chesterfield County areas since 2021.
+              Serving the Rixeyville, VA area. Landscaping, tree services, and storm cleanup — open 24 hours.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link to="/contact" className="rounded-full bg-primary px-7 py-3 text-base font-bold text-brand-white transition-all hover:bg-accent hover:text-accent-foreground hover:shadow-glow">
-                Get a Free Quote
+                Get Pricing &amp; Availability
               </Link>
               <Link to="/gallery" className="rounded-full border-2 border-primary/40 px-7 py-3 text-base font-semibold text-primary transition-colors hover:border-primary hover:bg-primary hover:text-brand-white">
                 See Our Work
@@ -85,8 +88,8 @@ export default function Home() {
       <section className="bg-cream">
         <div className="mx-auto max-w-7xl px-4 py-20 lg:px-8">
           <div className="mb-12 text-center">
-            <h2 className="font-display text-4xl font-bold text-ink sm:text-5xl">Everything Your Property Needs</h2>
-            <p className="mt-3 text-ink-soft">One trusted team for lawn, exterior, and equipment work.</p>
+            <h2 className="font-display text-4xl font-bold text-ink sm:text-5xl">Services Offered</h2>
+            <p className="mt-3 text-ink-soft">Specialized outdoor land and tree services, mindful of your budget.</p>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {SERVICES.map(({ icon: Icon, title, desc, to }) => (
@@ -105,17 +108,17 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Before/After */}
+      {/* Recent Work */}
       <section className="border-y border-primary/15 bg-cream-soft">
         <div className="mx-auto max-w-7xl px-4 py-20 lg:px-8">
           <h2 className="text-center font-display text-4xl font-bold text-ink sm:text-5xl">Recent Work</h2>
-          <p className="mt-3 text-center text-ink-soft">A look at real projects across Chester and Chesterfield County.</p>
+          <p className="mt-3 text-center text-ink-soft">Photos from real jobs around the Rixeyville area.</p>
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { src: heroPhoto, alt: "Riding mower job in a Chester VA neighborhood" },
-              { src: leafPhoto, alt: "Fall leaf cleanup in a Chesterfield County yard" },
-              { src: fencePhoto, alt: "New picket fence installation" },
-              { src: repairPhoto, alt: "Small engine repair on a push mower" },
+              { src: heroPhoto, alt: "Young Man Land Service job site, Rixeyville VA" },
+              { src: stormPhoto, alt: "Storm damage cleanup, Rixeyville VA" },
+              { src: workPhoto, alt: "Land service work, Rixeyville VA" },
+              { src: treePhoto, alt: "Oak tree snagged between two trees from storm damage, Rixeyville VA" },
             ].map((p) => (
               <div key={p.src} className="overflow-hidden rounded-xl border border-primary/15 bg-cream-soft shadow-sm">
                 <img src={p.src} alt={p.alt} loading="lazy" className="aspect-[4/5] h-full w-full object-cover transition-transform duration-500 hover:scale-105" />
@@ -125,43 +128,36 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Tagline banner */}
-      <section className="bg-primary">
-        <div className="mx-auto max-w-7xl px-4 py-16 text-center lg:px-8">
-          <p className="font-display text-4xl italic text-brand-white sm:text-5xl">"We cut grass, not corners."</p>
-          <p className="mt-3 text-sm uppercase tracking-[0.2em] text-accent-light">Young Man's Lawn Care · Chester, VA</p>
-        </div>
-      </section>
-
-      {/* Reviews */}
+      {/* Reviews — clearly marked filler */}
       <section className="bg-cream">
         <div className="mx-auto max-w-7xl px-4 py-20 lg:px-8">
-          <h2 className="text-center font-display text-4xl font-bold text-ink sm:text-5xl">What Our Customers Are Saying</h2>
+          <h2 className="text-center font-display text-4xl font-bold text-ink sm:text-5xl">What Customers Say</h2>
+          <p className="mt-3 text-center text-sm italic text-ink-soft">
+            [FILLER content — Yelp shows a 5.0 rating but the single review's text isn't published. Replace with real quotes when available.]
+          </p>
           <div className="mt-10 grid gap-6 md:grid-cols-3">
-            {REVIEWS.map((r) => (
-              <div key={r.name} className="rounded-2xl border border-primary/15 bg-cream-soft p-6 shadow-sm">
+            {REVIEWS.map((r, i) => (
+              <div key={i} className="rounded-2xl border border-primary/15 bg-cream-soft p-6 shadow-sm">
                 <div className="flex gap-0.5">
-                  {Array.from({ length: 5 }).map((_, i) => <Star key={i} className="h-4 w-4 fill-primary text-primary" />)}
+                  {Array.from({ length: 5 }).map((_, j) => <Star key={j} className="h-4 w-4 fill-primary text-primary" />)}
                 </div>
-                <p className="mt-4 text-sm text-ink">"{r.text}"</p>
+                <p className="mt-4 text-sm text-ink">{r.text}</p>
                 <p className="mt-4 text-sm font-semibold text-primary">— {r.name}</p>
               </div>
             ))}
           </div>
-          <p className="mt-6 text-center text-xs italic text-ink-soft">(Customer reviews will be featured here)</p>
         </div>
       </section>
 
       {/* Footer CTA */}
       <section className="border-t border-primary/20 bg-cream-soft">
         <div className="mx-auto max-w-3xl px-4 py-20 text-center lg:px-8">
-          <h2 className="font-display text-4xl font-bold text-ink sm:text-5xl">Ready for a lawn you're proud of?</h2>
+          <h2 className="font-display text-4xl font-bold text-ink sm:text-5xl">Need outdoor work done?</h2>
           <Link to="/contact" className="mt-8 inline-block rounded-full bg-primary px-8 py-3.5 text-base font-bold text-brand-white transition-all hover:bg-accent hover:text-accent-foreground hover:shadow-glow">
-            Request Your Free Quote
+            Get Pricing &amp; Availability
           </Link>
         </div>
       </section>
     </SiteShell>
   );
 }
-

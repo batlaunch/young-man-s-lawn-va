@@ -1,49 +1,45 @@
 import { useSeo } from "@/lib/seo";
 import { SiteShell } from "@/components/site/SiteShell";
 import { SamplePhotoBadge } from "@/components/site/SamplePhotoBadge";
-import { Instagram } from "lucide-react";
-import home1 from "@/assets/photos/home1.png";
-import home2 from "@/assets/photos/home2.png";
-import home3 from "@/assets/photos/home3.png";
-import repair from "@/assets/photos/repair.png";
-
-const FEATURED = [
-  { src: home1, alt: "James on his riding mower in a Chester VA neighborhood" },
-  { src: home3, alt: "Fall leaf cleanup with a backpack blower" },
-  { src: home2, alt: "Newly installed picket fence" },
-  { src: repair, alt: "Small engine repair on a push mower" },
-];
-
-const GRID = [
-  "https://images.unsplash.com/photo-1599629954294-14df9ec8bc03?w=600",
-  "https://images.unsplash.com/photo-1560493676-04071c5f467b?w=600",
-  "https://images.unsplash.com/photo-1551410224-699683e15636?w=600",
-  "https://images.unsplash.com/photo-1572150619437-d18bef0a4b51?w=600",
-  "https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?w=600",
-  "https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?w=600",
-];
+import yelp1 from "@/assets/yelp/yelp1.jpg";
+import yelp2 from "@/assets/yelp/yelp2.jpg";
+import yelp3 from "@/assets/yelp/yelp3.jpg";
+import yelp4 from "@/assets/yelp/yelp4.jpg";
 
 export default function Gallery() {
   useSeo({
-    title: "Gallery | Young Man's Lawn Care Chester VA",
-    description: "Browse before and after photos of lawn care, yard cleanups, and property maintenance work by Young Man's Lawn Care in Chester and Chesterfield County, VA.",
+    title: "Gallery | Young Man Land Service — Rixeyville VA",
+    description:
+      "Photos of land service and tree work by Young Man Land Service in the Rixeyville, VA area.",
     meta: [
-      { property: "og:title", content: "Gallery | Young Man's Lawn Care" },
-      { property: "og:description", content: "Before & afters, cleanups, and lawn transformations across Chester and Chesterfield County." },
-      { property: "og:image", content: home1 },
+      { property: "og:title", content: "Gallery | Young Man Land Service" },
+      { property: "og:description", content: "Photos from real jobs in the Rixeyville, VA area." },
+      { property: "og:image", content: yelp1 },
     ],
   });
+
+  const FEATURED = [
+    { src: yelp1, alt: "Young Man Land Service job site, Rixeyville VA" },
+    { src: yelp2, alt: "Storm damage cleanup, Rixeyville VA" },
+    { src: yelp3, alt: "Land service work, Rixeyville VA" },
+    { src: yelp4, alt: "Oak tree snagged between two trees from storm damage, Rixeyville VA" },
+  ];
+
+  // Filler placeholders — there are only 4 real photos on the Yelp profile.
+  const SAMPLES = [yelp1, yelp2, yelp3, yelp4, yelp2, yelp3];
+
   return (
     <SiteShell>
       <section className="border-b border-border bg-grass-radial">
         <div className="mx-auto max-w-7xl px-4 py-16 lg:px-8 lg:py-20">
           <h1 className="font-display text-4xl font-bold text-brand-white sm:text-5xl lg:text-6xl">Our Work</h1>
-          <p className="mt-4 text-lg text-muted-foreground">Before & afters, cleanups, and lawn transformations across Chester and Chesterfield County.</p>
+          <p className="mt-4 text-lg text-muted-foreground">Photos from real jobs across the Rixeyville, VA area.</p>
         </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
-        <h2 className="font-display text-3xl font-bold text-brand-white">Featured Projects</h2>
+        <h2 className="font-display text-3xl font-bold text-brand-white">Featured Photos</h2>
+        <p className="mt-2 text-sm text-muted-foreground">Source: Yelp business profile.</p>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {FEATURED.map((p) => (
             <div key={p.src} className="overflow-hidden rounded-xl border border-border">
@@ -56,28 +52,19 @@ export default function Gallery() {
       <section className="border-t border-border bg-surface/40">
         <div className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
           <h2 className="font-display text-3xl font-bold text-brand-white">More Samples</h2>
+          <p className="mt-2 text-sm italic text-muted-foreground">
+            [FILLER — these are repeats of the four Yelp photos used as placeholders. Swap in additional real job photos when available.]
+          </p>
           <div className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-3">
-            {GRID.map((src, i) => (
+            {SAMPLES.map((src, i) => (
               <div key={i} className="relative overflow-hidden rounded-xl border border-border">
-                <img src={src} alt={`Lawn care work sample ${i + 1} — Chester VA`} loading="lazy" className="aspect-square h-full w-full object-cover transition-transform duration-500 hover:scale-105" />
+                <img src={src} alt={`Sample photo ${i + 1} — Rixeyville VA`} loading="lazy" className="aspect-square h-full w-full object-cover transition-transform duration-500 hover:scale-105" />
                 <SamplePhotoBadge />
               </div>
             ))}
           </div>
-          <p className="mt-6 text-center text-xs italic text-muted-foreground">(Stock samples — follow us on Instagram @young_mans_lawn_care for more real photos)</p>
-        </div>
-      </section>
-
-      <section className="bg-primary">
-        <div className="mx-auto max-w-3xl px-4 py-16 text-center lg:px-8">
-          <Instagram className="mx-auto h-10 w-10 text-accent-light" />
-          <h2 className="mt-4 font-display text-3xl font-bold text-brand-white sm:text-4xl">See more of our work on Instagram</h2>
-          <a href="https://www.instagram.com/young_mans_lawn_care/" target="_blank" rel="noreferrer noopener" className="mt-6 inline-flex items-center gap-2 rounded-full bg-accent px-7 py-3 font-bold text-accent-foreground transition-all hover:bg-accent-light hover:shadow-glow">
-            <Instagram className="h-5 w-5" /> @young_mans_lawn_care
-          </a>
         </div>
       </section>
     </SiteShell>
   );
 }
-

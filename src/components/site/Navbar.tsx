@@ -4,9 +4,9 @@ import { LogoPlaceholder } from "./Logo";
 
 const SERVICES = [
   { to: "/services/lawn-care", label: "Lawn Care" },
-  { to: "/services/pressure-washing", label: "Pressure Washing" },
-  { to: "/services/engine-repair", label: "Engine Repair" },
-  { to: "/services/small-construction", label: "Small Construction" },
+  { to: "/services/tree-services", label: "Tree Services" },
+  { to: "/services/storm-cleanup", label: "Storm Damage Cleanup" },
+  { to: "/services/greenscape", label: "Greenscape Construction" },
 ] as const;
 
 const NAV = [
@@ -20,7 +20,7 @@ export function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-40 border-b border-border bg-background/85 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-2 px-3 py-2.5 sm:gap-6 sm:px-4 sm:py-3 lg:px-8">
-        <Link to="/" aria-label="Young Man's Lawn Care home" className="shrink-0">
+        <Link to="/" aria-label="Young Man Land Service home" className="shrink-0">
           <LogoPlaceholder small />
         </Link>
 
@@ -62,11 +62,11 @@ export function Navbar() {
         </nav>
 
         <div className="flex shrink-0 items-center gap-3">
-          <a href="tel:+18083826129" aria-label="Call" className="text-brand-white/90 hover:text-accent sm:hidden">
+          <Link to="/contact" aria-label="Contact" className="text-brand-white/90 hover:text-accent sm:hidden">
             <Phone className="h-5 w-5" />
-          </a>
+          </Link>
           <Link to="/contact" className="hidden whitespace-nowrap rounded-full bg-accent px-4 py-2 text-sm font-bold text-accent-foreground transition-all hover:bg-accent-light hover:shadow-glow sm:inline-block">
-            Free Quote
+            Get Pricing
           </Link>
         </div>
       </div>

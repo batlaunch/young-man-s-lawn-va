@@ -1,0 +1,126 @@
+import { useState } from "react";
+import { useSeo } from "@/lib/seo";
+import { SiteShell } from "@/components/site/SiteShell";
+import { SocialIcons } from "@/components/site/SocialIcons";
+import { CheckCircle2, CreditCard, Mail, MapPin, Phone } from "lucide-react";
+
+const SERVICE_OPTIONS = [
+  "Lawn Care",
+  "Tree Services",
+  "Disease Management — Trees",
+  "Disease Management — Shrubs",
+  "Insect Management — Shrubs",
+  "Greenscape Construction",
+  "Storm Damage Cleanup",
+  "Other",
+];
+
+export default function Contact() {
+  useSeo({
+    title: "Contact | Young Man Land Service — Rixeyville VA",
+    description:
+      "Request pricing and availability from Young Man Land Service in the Rixeyville, VA area. Open 24 hours.",
+    meta: [
+      { property: "og:title", content: "Contact | Young Man Land Service" },
+      { property: "og:description", content: "Get pricing and availability for landscaping and tree services in Rixeyville, VA." },
+    ],
+  });
+
+  const [sent, setSent] = useState(false);
+
+  function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setSent(true);
+  }
+
+  return (
+    <SiteShell>
+      <section className="border-b border-border bg-grass-radial">
+        <div className="mx-auto max-w-7xl px-4 py-16 lg:px-8 lg:py-20">
+          <h1 className="font-display text-4xl font-bold text-brand-white sm:text-5xl lg:text-6xl">Get Pricing &amp; Availability</h1>
+          <p className="mt-4 text-lg text-muted-foreground">Serving the Rixeyville, VA area. Open 24 hours — we'll get back to you promptly.</p>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
+        <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr]">
+          <div className="rounded-3xl border border-border bg-surface p-6 sm:p-8">
+            {sent ? (
+              <div className="flex flex-col items-center py-16 text-center">
+                <CheckCircle2 className="h-16 w-16 text-accent" />
+                <h2 className="mt-4 font-display text-3xl font-bold text-brand-white">Thanks!</h2>
+                <p className="mt-2 text-muted-foreground">We'll be in touch soon.</p>
+              </div>
+            ) : (
+              <form onSubmit={onSubmit} className="grid gap-4 sm:grid-cols-2">
+                <Field label="Full Name" name="name" required />
+                <Field label="Phone Number" name="phone" type="tel" required />
+                <Field label="Email Address" name="email" type="email" required className="sm:col-span-2" />
+                <div className="sm:col-span-2">
+                  <label className="mb-1.5 block text-sm font-medium text-brand-white">Service Needed</label>
+                  <select required defaultValue="" className="w-full rounded-lg border border-border bg-background px-3 py-2.5 text-sm text-brand-white outline-none focus:border-accent">
+                    <option value="" disabled>Select a service…</option>
+                    {SERVICE_OPTIONS.map((s) => <option key={s} value={s}>{s}</option>)}
+                  </select>
+                </div>
+                <Field label="Property Address / Area" name="address" className="sm:col-span-2" />
+                <div className="sm:col-span-2">
+                  <label className="mb-1.5 block text-sm font-medium text-brand-white">Message / Additional Details</label>
+                  <textarea rows={4} className="w-full rounded-lg border border-border bg-background px-3 py-2.5 text-sm text-brand-white outline-none focus:border-accent" />
+                </div>
+                <button type="submit" className="sm:col-span-2 w-full rounded-full bg-accent px-7 py-3 text-base font-bold text-accent-foreground transition-all hover:bg-accent-light hover:shadow-glow">
+                  Send Request
+                </button>
+              </form>
+            )}
+          </div>
+
+          <aside className="space-y-6">
+            <div className="rounded-3xl border border-border bg-surface p-6">
+              <h2 className="font-display text-2xl font-semibold text-brand-white">Contact Info</h2>
+              <p className="mt-2 text-xs italic text-muted-foreground">
+                [Phone and email below are placeholders — Yelp doesn't publish them. Replace with the real ones.]
+              </p>
+              <ul className="mt-5 space-y-3 text-sm text-brand-white/90">
+                <li><span className="flex items-center gap-3"><Phone className="h-5 w-5 text-accent" /> (555) 123-4567 <span className="text-xs italic text-muted-foreground">[FILLER]</span></span></li>
+                <li><span className="flex items-center gap-3"><Mail className="h-5 w-5 text-accent" /> contact@example.com <span className="text-xs italic text-muted-foreground">[FILLER]</span></span></li>
+                <li className="flex items-start gap-3"><MapPin className="h-5 w-5 shrink-0 text-accent" /> Serving the Rixeyville, VA area</li>
+              </ul>
+              <div className="mt-6">
+                <p className="mb-2 text-xs uppercase tracking-wider text-muted-foreground">Find Us</p>
+                <SocialIcons size={22} />
+              </div>
+            </div>
+
+            <div className="rounded-3xl border border-border bg-surface p-6">
+              <p className="mb-3 text-xs uppercase tracking-wider text-muted-foreground">Hours</p>
+              <p className="text-sm text-brand-white/90">Open 24 hours · 7 days a week</p>
+            </div>
+
+            <div className="rounded-3xl border border-border bg-surface p-6">
+              <p className="mb-3 text-xs uppercase tracking-wider text-muted-foreground">Payments Accepted</p>
+              <div className="flex flex-wrap gap-2">
+                {["Cash", "Zelle", "Cash App", "Cryptocurrency"].map((p) => (
+                  <span key={p} className="inline-flex items-center gap-1.5 rounded-full border border-border bg-background px-3 py-1.5 text-xs text-brand-white">
+                    <CreditCard className="h-3.5 w-3.5 text-accent" /> {p}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </SiteShell>
+  );
+}
+
+function Field({ label, name, type = "text", required, className = "" }: { label: string; name: string; type?: string; required?: boolean; className?: string }) {
+  return (
+    <div className={className}>
+      <label htmlFor={name} className="mb-1.5 block text-sm font-medium text-brand-white">
+        {label}{required && <span className="text-accent"> *</span>}
+      </label>
+      <input id={name} name={name} type={type} required={required} className="w-full rounded-lg border border-border bg-background px-3 py-2.5 text-sm text-brand-white outline-none focus:border-accent" />
+    </div>
+  );
+}

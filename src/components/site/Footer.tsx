@@ -18,10 +18,12 @@ export function Footer() {
           <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-brand-white">Quick Links</h4>
           <ul className="space-y-2 text-sm text-muted-foreground">
             <li><Link to="/" className="hover:text-accent">Home</Link></li>
-            <li><Link to="/services/lawn-care" className="hover:text-accent">Lawn Care</Link></li>
-            <li><Link to="/services/tree-services" className="hover:text-accent">Tree Services</Link></li>
-            <li><Link to="/services/storm-cleanup" className="hover:text-accent">Storm Damage Cleanup</Link></li>
-            <li><Link to="/services/greenscape" className="hover:text-accent">Greenscape Construction</Link></li>
+            <li><Link to="/services/lawn-turf" className="hover:text-accent">Lawn Care & Turf Management</Link></li>
+            <li><Link to="/services/trees-shrubs-beds" className="hover:text-accent">Trees, Shrubs & Beds</Link></li>
+            <li><Link to="/services/landscape-hardscaping" className="hover:text-accent">Landscape Design & Hardscaping</Link></li>
+            <li><Link to="/services/irrigation" className="hover:text-accent">Irrigation & Systems</Link></li>
+            <li><Link to="/services/pest-control" className="hover:text-accent">Pest & Environmental Control</Link></li>
+            <li><Link to="/services/seasonal" className="hover:text-accent">Seasonal Services</Link></li>
             <li><Link to="/about" className="hover:text-accent">About</Link></li>
             <li><Link to="/gallery" className="hover:text-accent">Gallery</Link></li>
             <li><Link to="/contact" className="hover:text-accent">Contact</Link></li>

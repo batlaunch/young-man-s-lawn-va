@@ -1,13 +1,15 @@
 import { Link } from "react-router-dom";
 import { useSeo } from "@/lib/seo";
 import { SiteShell } from "@/components/site/SiteShell";
-import { Leaf, Sparkles, TreePine, Wrench } from "lucide-react";
+import { Leaf, TreePine, Hammer, Droplets, Bug, Snowflake } from "lucide-react";
 
 const ITEMS = [
-  { to: "/services/lawn-care", icon: Leaf, title: "Lawn Care", desc: "Mowing, maintenance, and yard upkeep" },
-  { to: "/services/tree-services", icon: TreePine, title: "Tree Services", desc: "Tree care plus disease & insect management" },
-  { to: "/services/storm-cleanup", icon: Sparkles, title: "Storm Damage Cleanup", desc: "After-storm debris removal — open 24 hours" },
-  { to: "/services/greenscape", icon: Wrench, title: "Greenscape Construction", desc: "Outdoor land and property projects" },
+  { to: "/services/lawn-turf", icon: Leaf, title: "Lawn Care & Turf Management", desc: "Mowing, fertilization, weed control, aeration, overseeding, sod installation" },
+  { to: "/services/trees-shrubs-beds", icon: TreePine, title: "Trees, Shrubs & Beds", desc: "Trimming, pruning, stump grinding, bed maintenance, mulching" },
+  { to: "/services/landscape-hardscaping", icon: Hammer, title: "Landscape Design & Hardscaping", desc: "Design & install, patios, walls, walkways, drainage, erosion control" },
+  { to: "/services/irrigation", icon: Droplets, title: "Irrigation & Systems", desc: "Irrigation installation & maintenance" },
+  { to: "/services/pest-control", icon: Bug, title: "Pest & Environmental Control", desc: "Pest & grub control" },
+  { to: "/services/seasonal", icon: Snowflake, title: "Seasonal Services", desc: "Leaf removal, spring & fall cleanups, snow & ice management" },
 ];
 
 export default function ServicesIndex() {

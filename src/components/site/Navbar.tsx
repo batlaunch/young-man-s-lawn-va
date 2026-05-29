@@ -3,10 +3,12 @@ import { ChevronDown, Phone } from "lucide-react";
 import { LogoPlaceholder } from "./Logo";
 
 const SERVICES = [
-  { to: "/services/lawn-care", label: "Lawn Care" },
-  { to: "/services/tree-services", label: "Tree Services" },
-  { to: "/services/storm-cleanup", label: "Storm Damage Cleanup" },
-  { to: "/services/greenscape", label: "Greenscape Construction" },
+  { to: "/services/lawn-turf", label: "Lawn Care & Turf Management" },
+  { to: "/services/trees-shrubs-beds", label: "Trees, Shrubs & Beds" },
+  { to: "/services/landscape-hardscaping", label: "Landscape Design & Hardscaping" },
+  { to: "/services/irrigation", label: "Irrigation & Systems" },
+  { to: "/services/pest-control", label: "Pest & Environmental Control" },
+  { to: "/services/seasonal", label: "Seasonal Services" },
 ] as const;
 
 const NAV = [

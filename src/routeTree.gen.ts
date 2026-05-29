@@ -13,6 +13,11 @@ import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ServicesIndexRouteImport } from './routes/services.index'
+import { Route as ServicesSmallConstructionRouteImport } from './routes/services.small-construction'
+import { Route as ServicesPressureWashingRouteImport } from './routes/services.pressure-washing'
+import { Route as ServicesLawnCareRouteImport } from './routes/services.lawn-care'
+import { Route as ServicesEngineRepairRouteImport } from './routes/services.engine-repair'
 
 const GalleryRoute = GalleryRouteImport.update({
   id: '/gallery',
@@ -34,18 +39,54 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicesIndexRoute = ServicesIndexRouteImport.update({
+  id: '/services/',
+  path: '/services/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesSmallConstructionRoute =
+  ServicesSmallConstructionRouteImport.update({
+    id: '/services/small-construction',
+    path: '/services/small-construction',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServicesPressureWashingRoute = ServicesPressureWashingRouteImport.update({
+  id: '/services/pressure-washing',
+  path: '/services/pressure-washing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesLawnCareRoute = ServicesLawnCareRouteImport.update({
+  id: '/services/lawn-care',
+  path: '/services/lawn-care',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesEngineRepairRoute = ServicesEngineRepairRouteImport.update({
+  id: '/services/engine-repair',
+  path: '/services/engine-repair',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
+  '/services/engine-repair': typeof ServicesEngineRepairRoute
+  '/services/lawn-care': typeof ServicesLawnCareRoute
+  '/services/pressure-washing': typeof ServicesPressureWashingRoute
+  '/services/small-construction': typeof ServicesSmallConstructionRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
+  '/services/engine-repair': typeof ServicesEngineRepairRoute
+  '/services/lawn-care': typeof ServicesLawnCareRoute
+  '/services/pressure-washing': typeof ServicesPressureWashingRoute
+  '/services/small-construction': typeof ServicesSmallConstructionRoute
+  '/services': typeof ServicesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -53,13 +94,46 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
+  '/services/engine-repair': typeof ServicesEngineRepairRoute
+  '/services/lawn-care': typeof ServicesLawnCareRoute
+  '/services/pressure-washing': typeof ServicesPressureWashingRoute
+  '/services/small-construction': typeof ServicesSmallConstructionRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/contact' | '/gallery'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/gallery'
+    | '/services/engine-repair'
+    | '/services/lawn-care'
+    | '/services/pressure-washing'
+    | '/services/small-construction'
+    | '/services/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/contact' | '/gallery'
-  id: '__root__' | '/' | '/about' | '/contact' | '/gallery'
+  to:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/gallery'
+    | '/services/engine-repair'
+    | '/services/lawn-care'
+    | '/services/pressure-washing'
+    | '/services/small-construction'
+    | '/services'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/gallery'
+    | '/services/engine-repair'
+    | '/services/lawn-care'
+    | '/services/pressure-washing'
+    | '/services/small-construction'
+    | '/services/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -67,6 +141,11 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
   GalleryRoute: typeof GalleryRoute
+  ServicesEngineRepairRoute: typeof ServicesEngineRepairRoute
+  ServicesLawnCareRoute: typeof ServicesLawnCareRoute
+  ServicesPressureWashingRoute: typeof ServicesPressureWashingRoute
+  ServicesSmallConstructionRoute: typeof ServicesSmallConstructionRoute
+  ServicesIndexRoute: typeof ServicesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -99,6 +178,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services/': {
+      id: '/services/'
+      path: '/services'
+      fullPath: '/services/'
+      preLoaderRoute: typeof ServicesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/small-construction': {
+      id: '/services/small-construction'
+      path: '/services/small-construction'
+      fullPath: '/services/small-construction'
+      preLoaderRoute: typeof ServicesSmallConstructionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/pressure-washing': {
+      id: '/services/pressure-washing'
+      path: '/services/pressure-washing'
+      fullPath: '/services/pressure-washing'
+      preLoaderRoute: typeof ServicesPressureWashingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/lawn-care': {
+      id: '/services/lawn-care'
+      path: '/services/lawn-care'
+      fullPath: '/services/lawn-care'
+      preLoaderRoute: typeof ServicesLawnCareRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/engine-repair': {
+      id: '/services/engine-repair'
+      path: '/services/engine-repair'
+      fullPath: '/services/engine-repair'
+      preLoaderRoute: typeof ServicesEngineRepairRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -107,6 +221,11 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
   GalleryRoute: GalleryRoute,
+  ServicesEngineRepairRoute: ServicesEngineRepairRoute,
+  ServicesLawnCareRoute: ServicesLawnCareRoute,
+  ServicesPressureWashingRoute: ServicesPressureWashingRoute,
+  ServicesSmallConstructionRoute: ServicesSmallConstructionRoute,
+  ServicesIndexRoute: ServicesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -1,7 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell } from "@/components/site/SiteShell";
-import { SamplePhotoBadge } from "@/components/site/SamplePhotoBadge";
 import { CheckCircle2, Hammer, Sparkles, Star, Wrench, Leaf } from "lucide-react";
+import heroPhoto from "@/assets/photos/home1.png";
+import fencePhoto from "@/assets/photos/home2.png";
+import leafPhoto from "@/assets/photos/home3.png";
+import repairPhoto from "@/assets/photos/repair.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -10,7 +13,7 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Chester VA's trusted lawn care, pressure washing, and engine repair company. Serving Chesterfield County since 2021. Free estimates." },
       { property: "og:title", content: "Young Man's Lawn Care | Chester VA" },
       { property: "og:description", content: "Chester VA's trusted lawn care, pressure washing, and engine repair company since 2021." },
-      { property: "og:image", content: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600" },
+      { property: "og:image", content: heroPhoto },
     ],
   }),
   component: Home,
@@ -43,8 +46,8 @@ function Home() {
       <section className="relative isolate overflow-hidden bg-cream">
         <div className="absolute inset-0 -z-10">
           <img
-            src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600"
-            alt="Freshly mowed green lawn — Chester VA lawn care"
+            src={heroPhoto}
+            alt="James of Young Man's Lawn Care on his riding mower in a Chester VA neighborhood"
             className="h-full w-full object-cover opacity-70"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-cream/40 via-cream/55 to-cream" />
@@ -108,19 +111,20 @@ function Home() {
       {/* Before/After */}
       <section className="border-y border-primary/15 bg-cream-soft">
         <div className="mx-auto max-w-7xl px-4 py-20 lg:px-8">
-          <h2 className="text-center font-display text-4xl font-bold text-ink sm:text-5xl">The Young Man's Difference</h2>
-          <div className="mt-10 grid gap-8 md:grid-cols-2">
+          <h2 className="text-center font-display text-4xl font-bold text-ink sm:text-5xl">Recent Work</h2>
+          <p className="mt-3 text-center text-ink-soft">A look at real projects across Chester and Chesterfield County.</p>
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { before: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800", after: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800" },
-              { before: "https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?w=800", after: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=800" },
-            ].map((pair, i) => (
-              <div key={i} className="grid grid-cols-2 gap-3">
-                <BAImage src={pair.before} label="Before" alt="Before lawn care in Chester VA" />
-                <BAImage src={pair.after} label="After" alt="After lawn care in Chester VA" />
+              { src: heroPhoto, alt: "Riding mower job in a Chester VA neighborhood" },
+              { src: leafPhoto, alt: "Fall leaf cleanup in a Chesterfield County yard" },
+              { src: fencePhoto, alt: "New picket fence installation" },
+              { src: repairPhoto, alt: "Small engine repair on a push mower" },
+            ].map((p) => (
+              <div key={p.src} className="overflow-hidden rounded-xl border border-primary/15 bg-cream-soft shadow-sm">
+                <img src={p.src} alt={p.alt} loading="lazy" className="aspect-[4/5] h-full w-full object-cover transition-transform duration-500 hover:scale-105" />
               </div>
             ))}
           </div>
-          <p className="mt-6 text-center text-xs italic text-ink-soft">(Sample photos — real project photos will be featured here)</p>
         </div>
       </section>
 
@@ -164,12 +168,3 @@ function Home() {
   );
 }
 
-function BAImage({ src, label, alt }: { src: string; label: string; alt: string }) {
-  return (
-    <div className="relative overflow-hidden rounded-xl border border-border">
-      <img src={src} alt={alt} className="aspect-[4/3] h-full w-full object-cover" loading="lazy" />
-      <span className="absolute left-2 top-2 rounded-full bg-accent px-3 py-1 text-xs font-bold text-accent-foreground">{label}</span>
-      <SamplePhotoBadge />
-    </div>
-  );
-}

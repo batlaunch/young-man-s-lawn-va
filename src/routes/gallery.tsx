@@ -2,6 +2,10 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteShell } from "@/components/site/SiteShell";
 import { SamplePhotoBadge } from "@/components/site/SamplePhotoBadge";
 import { Instagram } from "lucide-react";
+import home1 from "@/assets/photos/home1.png";
+import home2 from "@/assets/photos/home2.png";
+import home3 from "@/assets/photos/home3.png";
+import repair from "@/assets/photos/repair.png";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
@@ -10,16 +14,17 @@ export const Route = createFileRoute("/gallery")({
       { name: "description", content: "Browse before and after photos of lawn care, yard cleanups, and property maintenance work by Young Man's Lawn Care in Chester and Chesterfield County, VA." },
       { property: "og:title", content: "Gallery | Young Man's Lawn Care" },
       { property: "og:description", content: "Before & afters, cleanups, and lawn transformations across Chester and Chesterfield County." },
-      { property: "og:image", content: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200" },
+      { property: "og:image", content: home1 },
     ],
   }),
   component: Gallery,
 });
 
-const PAIRS = [
-  { b: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=700", a: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700" },
-  { b: "https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?w=700", a: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=700" },
-  { b: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=700", a: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700" },
+const FEATURED = [
+  { src: home1, alt: "James on his riding mower in a Chester VA neighborhood" },
+  { src: home3, alt: "Fall leaf cleanup with a backpack blower" },
+  { src: home2, alt: "Newly installed picket fence" },
+  { src: repair, alt: "Small engine repair on a push mower" },
 ];
 
 const GRID = [
@@ -42,21 +47,19 @@ function Gallery() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
-        <h2 className="font-display text-3xl font-bold text-brand-white">Before & After</h2>
-        <div className="mt-8 grid gap-8 md:grid-cols-3">
-          {PAIRS.map((p, i) => (
-            <div key={i} className="grid grid-cols-2 gap-2">
-              <BA src={p.b} label="Before" />
-              <BA src={p.a} label="After" />
+        <h2 className="font-display text-3xl font-bold text-brand-white">Featured Projects</h2>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {FEATURED.map((p) => (
+            <div key={p.src} className="overflow-hidden rounded-xl border border-border">
+              <img src={p.src} alt={p.alt} loading="lazy" className="aspect-[4/5] h-full w-full object-cover" />
             </div>
           ))}
         </div>
-        <p className="mt-6 text-center text-xs italic text-muted-foreground">(Sample images shown — real project photos will be featured here)</p>
       </section>
 
       <section className="border-t border-border bg-surface/40">
         <div className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
-          <h2 className="font-display text-3xl font-bold text-brand-white">More Work</h2>
+          <h2 className="font-display text-3xl font-bold text-brand-white">More Samples</h2>
           <div className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-3">
             {GRID.map((src, i) => (
               <div key={i} className="relative overflow-hidden rounded-xl border border-border">
@@ -65,7 +68,7 @@ function Gallery() {
               </div>
             ))}
           </div>
-          <p className="mt-6 text-center text-xs italic text-muted-foreground">(More photos coming soon — follow us on Instagram @young_mans_lawn_care)</p>
+          <p className="mt-6 text-center text-xs italic text-muted-foreground">(Stock samples — follow us on Instagram @young_mans_lawn_care for more real photos)</p>
         </div>
       </section>
 
@@ -82,12 +85,3 @@ function Gallery() {
   );
 }
 
-function BA({ src, label }: { src: string; label: string }) {
-  return (
-    <div className="relative overflow-hidden rounded-xl border border-border">
-      <img src={src} alt={`${label} lawn care work in Chester VA`} className="aspect-[3/4] h-full w-full object-cover" loading="lazy" />
-      <span className="absolute left-2 top-2 rounded-full bg-accent px-2.5 py-0.5 text-[10px] font-bold uppercase text-accent-foreground">{label}</span>
-      <SamplePhotoBadge />
-    </div>
-  );
-}

@@ -3,6 +3,7 @@ import { useState } from "react";
 import { SiteShell } from "@/components/site/SiteShell";
 import { SocialIcons } from "@/components/site/SocialIcons";
 import { CheckCircle2, CreditCard, Mail, MapPin, Phone } from "lucide-react";
+import reviewQr from "@/assets/photos/contact.png";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -95,6 +96,13 @@ function Contact() {
                   </span>
                 ))}
               </div>
+            </div>
+            <div className="rounded-3xl border border-border bg-surface p-6 text-center">
+              <p className="mb-3 text-xs uppercase tracking-wider text-muted-foreground">Leave Us a Google Review</p>
+              <a href="https://g.page/r/Cc7WXdpUAGKsEBM/review" target="_blank" rel="noreferrer noopener" className="inline-block">
+                <img src={reviewQr} alt="QR code to leave a Google review for Young Man's Lawn Care" className="mx-auto h-40 w-40 rounded-lg bg-white p-2" />
+              </a>
+              <p className="mt-3 text-xs text-muted-foreground">Scan or tap the code</p>
             </div>
           </aside>
         </div>

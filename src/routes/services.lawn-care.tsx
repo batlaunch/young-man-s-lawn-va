@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage } from "@/components/site/ServicePage";
+import lawnPhoto from "@/assets/photos/home3.png";
 
 export const Route = createFileRoute("/services/lawn-care")({
   head: () => ({
@@ -8,15 +9,15 @@ export const Route = createFileRoute("/services/lawn-care")({
       { name: "description", content: "Affordable lawn mowing, edging, aeration, fertilization, and yard cleanup in Chester and Chesterfield County, VA. Free estimates. Call (808) 382-6129." },
       { property: "og:title", content: "Lawn Care Services in Chester VA" },
       { property: "og:description", content: "Professional lawn maintenance for residential properties in Chesterfield County." },
-      { property: "og:image", content: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200" },
+      { property: "og:image", content: lawnPhoto },
     ],
   }),
   component: () => (
     <ServicePage
       title="Lawn Care Services — Chester, VA"
       subtitle="Affordable, professional lawn maintenance for residential properties in Chester and Chesterfield County."
-      heroImage="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600"
-      imageAlt="Freshly mowed residential lawn in Chester VA"
+      heroImage={lawnPhoto}
+      imageAlt="James of Young Man's Lawn Care doing fall leaf cleanup in Chester VA"
       ctaLabel="Get a Free Quote"
       prices={[
         { service: "Lawn Mowing", price: "$40 – $100 per service (varies by lawn size)" },

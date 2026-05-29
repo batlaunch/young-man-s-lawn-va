@@ -7,7 +7,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
     <div className="flex min-h-screen flex-col">
       <DemoBanner />
       <Navbar />
-      <main className="flex-1">{children}</main>
+      <main className="flex-1 lg:pt-[72px]">{children}</main>
       <Footer />
     </div>
   );

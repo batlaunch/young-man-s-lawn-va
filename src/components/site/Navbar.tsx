@@ -26,7 +26,7 @@ export function Navbar() {
           <LogoPlaceholder small />
         </Link>
 
-        <nav className="flex flex-1 items-center justify-center gap-1.5 overflow-x-auto sm:gap-4 lg:gap-8">
+        <nav className="flex flex-1 flex-wrap items-center justify-center gap-1.5 sm:gap-4 lg:gap-8">
           <NavLink
             to="/"
             end

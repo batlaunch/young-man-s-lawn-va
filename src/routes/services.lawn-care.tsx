@@ -5,7 +5,7 @@ export const Route = createFileRoute("/services/lawn-care")({
   head: () => ({
     meta: [
       { title: "Lawn Care Services in Chester VA | Young Man's Lawn Care" },
-      { name: "description", content: "Affordable lawn mowing, edging, aeration, fertilization, and yard cleanup in Chester and Chesterfield County, VA. Free estimates. Call (804) 555-0123." },
+      { name: "description", content: "Affordable lawn mowing, edging, aeration, fertilization, and yard cleanup in Chester and Chesterfield County, VA. Free estimates. Call (808) 382-6129." },
       { property: "og:title", content: "Lawn Care Services in Chester VA" },
       { property: "og:description", content: "Professional lawn maintenance for residential properties in Chesterfield County." },
       { property: "og:image", content: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200" },

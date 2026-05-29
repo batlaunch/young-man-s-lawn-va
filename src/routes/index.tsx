@@ -1,17 +1,19 @@
 import { Link } from "react-router-dom";
 import { useSeo } from "@/lib/seo";
 import { SiteShell } from "@/components/site/SiteShell";
-import { CheckCircle2, Leaf, Sparkles, Star, TreePine, Wrench } from "lucide-react";
+import { CheckCircle2, Leaf, Star, TreePine, Hammer, Droplets, Bug, Snowflake } from "lucide-react";
 import heroPhoto from "@/assets/yelp/yelp1.jpg";
 import stormPhoto from "@/assets/yelp/yelp2.jpg";
 import workPhoto from "@/assets/yelp/yelp3.jpg";
 import treePhoto from "@/assets/yelp/yelp4.jpg";
 
 const SERVICES = [
-  { icon: Leaf, title: "Lawn Care", desc: "Mowing, maintenance, and yard upkeep", to: "/services/lawn-care" },
-  { icon: TreePine, title: "Tree Services", desc: "Tree care plus disease & insect management", to: "/services/tree-services" },
-  { icon: Sparkles, title: "Storm Damage Cleanup", desc: "After-storm debris removal — open 24 hours", to: "/services/storm-cleanup" },
-  { icon: Wrench, title: "Greenscape Construction", desc: "Outdoor land and property projects", to: "/services/greenscape" },
+  { icon: Leaf, title: "Lawn Care & Turf Management", desc: "Mowing, fertilization, weed control, aeration, overseeding, sod", to: "/services/lawn-turf" },
+  { icon: TreePine, title: "Trees, Shrubs & Beds", desc: "Trimming, pruning, stump grinding, beds, mulching", to: "/services/trees-shrubs-beds" },
+  { icon: Hammer, title: "Landscape Design & Hardscaping", desc: "Patios, walls, walkways, drainage, erosion control", to: "/services/landscape-hardscaping" },
+  { icon: Droplets, title: "Irrigation & Systems", desc: "Irrigation installation & maintenance", to: "/services/irrigation" },
+  { icon: Bug, title: "Pest & Environmental Control", desc: "Pest & grub control", to: "/services/pest-control" },
+  { icon: Snowflake, title: "Seasonal Services", desc: "Leaf removal, cleanups, snow & ice management", to: "/services/seasonal" },
 ];
 
 const TRUST = [

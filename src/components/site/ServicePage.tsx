@@ -24,6 +24,8 @@ export function ServicePage(props: {
         </div>
       </section>
 
+      <ServicesSubNav />
+
       {heroImage && (
         <section className="mx-auto max-w-7xl px-4 pt-10 lg:px-8">
           <div className="overflow-hidden rounded-3xl border border-border">
@@ -31,8 +33,6 @@ export function ServicePage(props: {
           </div>
         </section>
       )}
-
-      <ServicesSubNav />
 
       <section className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
         {prices && (

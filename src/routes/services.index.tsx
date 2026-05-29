@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useSeo } from "@/lib/seo";
 import { SiteShell } from "@/components/site/SiteShell";
+import { ServicesSubNav } from "@/components/site/ServicesSubNav";
 import { Leaf, TreePine, Hammer, Droplets, Bug, Snowflake } from "lucide-react";
 
 const ITEMS = [

@@ -1,18 +1,9 @@
-import { Instagram, Youtube } from "lucide-react";
+import { Star } from "lucide-react";
 
+// Only the Yelp profile is verified; other social handles are not published on Yelp.
 const SOCIALS = [
-  { href: "https://www.instagram.com/young_mans_lawn_care/", label: "Instagram", icon: Instagram },
-  { href: "https://x.com/YoungMansLawn", label: "X / Twitter", icon: XIcon },
-  { href: "https://www.youtube.com/channel/UCB1bnwaXfZ0-uKthZzEkJkQ", label: "YouTube", icon: Youtube },
+  { href: "https://www.yelp.com/biz/young-man-land-service-rixeyville-5", label: "Yelp", icon: Star },
 ];
-
-function XIcon({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden>
-      <path d="M18.244 2H21l-6.49 7.41L22 22h-6.78l-4.78-6.27L4.84 22H2l6.95-7.94L2 2h6.93l4.34 5.78L18.24 2Zm-1.18 18h1.69L7.04 4H5.27l11.79 16Z" />
-    </svg>
-  );
-}
 
 export function SocialIcons({ size = 18, className = "" }: { size?: number; className?: string }) {
   return (

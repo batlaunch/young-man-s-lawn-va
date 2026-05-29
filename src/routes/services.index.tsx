@@ -1,18 +1,7 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
+import { useSeo } from "@/lib/seo";
 import { SiteShell } from "@/components/site/SiteShell";
 import { Hammer, Leaf, Sparkles, Wrench } from "lucide-react";
-
-export const Route = createFileRoute("/services/")({
-  head: () => ({
-    meta: [
-      { title: "Services | Young Man's Lawn Care Chester VA" },
-      { name: "description", content: "Lawn care, pressure washing, engine repair, and small construction services in Chester and Chesterfield County, VA." },
-      { property: "og:title", content: "Services | Young Man's Lawn Care" },
-      { property: "og:description", content: "Everything your property needs — lawn, exterior, equipment, and yard projects." },
-    ],
-  }),
-  component: ServicesIndex,
-});
 
 const ITEMS = [
   { to: "/services/lawn-care", icon: Leaf, title: "Lawn Care", desc: "Mowing, edging, aeration, fertilization & more" },
@@ -21,7 +10,15 @@ const ITEMS = [
   { to: "/services/small-construction", icon: Hammer, title: "Small Construction", desc: "Yard projects and property improvements" },
 ];
 
-function ServicesIndex() {
+export default function ServicesIndex() {
+  useSeo({
+    title: "Services | Young Man's Lawn Care Chester VA",
+    description: "Lawn care, pressure washing, engine repair, and small construction services in Chester and Chesterfield County, VA.",
+    meta: [
+      { property: "og:title", content: "Services | Young Man's Lawn Care" },
+      { property: "og:description", content: "Everything your property needs — lawn, exterior, equipment, and yard projects." },
+    ],
+  });
   return (
     <SiteShell>
       <section className="border-b border-border bg-grass-radial">

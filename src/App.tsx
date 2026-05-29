@@ -6,9 +6,9 @@ import Contact from "./routes/contact";
 import Gallery from "./routes/gallery";
 import ServicesIndex from "./routes/services.index";
 import LawnCare from "./routes/services.lawn-care";
-import PressureWashing from "./routes/services.pressure-washing";
-import EngineRepair from "./routes/services.engine-repair";
-import SmallConstruction from "./routes/services.small-construction";
+import TreeServices from "./routes/services.tree-services";
+import StormCleanup from "./routes/services.storm-cleanup";
+import Greenscape from "./routes/services.greenscape";
 import NotFound from "./routes/not-found";
 
 function ScrollToTop() {
@@ -30,9 +30,9 @@ export default function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/services" element={<ServicesIndex />} />
         <Route path="/services/lawn-care" element={<LawnCare />} />
-        <Route path="/services/pressure-washing" element={<PressureWashing />} />
-        <Route path="/services/engine-repair" element={<EngineRepair />} />
-        <Route path="/services/small-construction" element={<SmallConstruction />} />
+        <Route path="/services/tree-services" element={<TreeServices />} />
+        <Route path="/services/storm-cleanup" element={<StormCleanup />} />
+        <Route path="/services/greenscape" element={<Greenscape />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>

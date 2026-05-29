@@ -1,17 +1,17 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { useSeo } from "@/lib/seo";
 import { ServicePage } from "@/components/site/ServicePage";
 
-export const Route = createFileRoute("/services/pressure-washing")({
-  head: () => ({
+export default function PressureWashing() {
+  useSeo({
+    title: "Pressure Washing Chester VA | Young Man's Lawn Care",
+    description: "Professional pressure washing services in Chester and Chesterfield County, VA. Driveways, decks, siding, and more. Free estimates available.",
     meta: [
-      { title: "Pressure Washing Chester VA | Young Man's Lawn Care" },
-      { name: "description", content: "Professional pressure washing services in Chester and Chesterfield County, VA. Driveways, decks, siding, and more. Free estimates available." },
       { property: "og:title", content: "Pressure Washing Chester VA" },
       { property: "og:description", content: "Restore your driveways, decks, siding, and patios." },
       { property: "og:image", content: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=1200" },
     ],
-  }),
-  component: () => (
+  });
+  return (
     <ServicePage
       title="Pressure Washing — Chester, VA"
       subtitle="Restore your driveways, sidewalks, decks, siding, and patios to like-new condition."
@@ -27,5 +27,5 @@ export const Route = createFileRoute("/services/pressure-washing")({
       ]}
       note="Pricing varies by square footage and surface. Contact us for a free estimate."
     />
-  ),
-});
+  );
+}

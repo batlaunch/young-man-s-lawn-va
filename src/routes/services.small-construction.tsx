@@ -1,18 +1,18 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { useSeo } from "@/lib/seo";
 import { ServicePage } from "@/components/site/ServicePage";
 import fencePhoto from "@/assets/photos/home2.png";
 
-export const Route = createFileRoute("/services/small-construction")({
-  head: () => ({
+export default function SmallConstruction() {
+  useSeo({
+    title: "Small Construction Services Chester VA | Young Man's Lawn Care",
+    description: "Small construction and yard improvement projects in Chester, VA. Fencing, retaining walls, raised beds, and more. Call Young Man's Lawn Care for a free estimate.",
     meta: [
-      { title: "Small Construction Services Chester VA | Young Man's Lawn Care" },
-      { name: "description", content: "Small construction and yard improvement projects in Chester, VA. Fencing, retaining walls, raised beds, and more. Call Young Man's Lawn Care for a free estimate." },
       { property: "og:title", content: "Small Construction Services Chester VA" },
       { property: "og:description", content: "From yard projects to property improvements." },
       { property: "og:image", content: fencePhoto },
     ],
-  }),
-  component: () => (
+  });
+  return (
     <ServicePage
       title="Small Construction Services — Chester, VA"
       subtitle="From yard projects to property improvements, we handle the small jobs that make a big difference."
@@ -28,5 +28,5 @@ export const Route = createFileRoute("/services/small-construction")({
       ]}
       note="Pricing varies by project. Contact us for a free estimate."
     />
-  ),
-});
+  );
+}

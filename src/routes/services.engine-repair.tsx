@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage } from "@/components/site/ServicePage";
+import repairPhoto from "@/assets/photos/repair.png";
 
 export const Route = createFileRoute("/services/engine-repair")({
   head: () => ({
@@ -8,12 +9,15 @@ export const Route = createFileRoute("/services/engine-repair")({
       { name: "description", content: "Lawn mower tune-ups, carburetor repair, blade sharpening, and small engine maintenance in Chester, VA. Affordable rates. Call (808) 382-6129." },
       { property: "og:title", content: "Small Engine Repair Chester VA" },
       { property: "og:description", content: "Keep your lawn equipment running like new." },
+      { property: "og:image", content: repairPhoto },
     ],
   }),
   component: () => (
     <ServicePage
       title="Small Engine Repair & Maintenance — Chester, VA"
       subtitle="Keep your lawn equipment running like new. We service push mowers, riding mowers, chainsaws, weed eaters, blowers, and more."
+      heroImage={repairPhoto}
+      imageAlt="James of Young Man's Lawn Care repairing a small mower engine"
       ctaLabel="Schedule a Repair"
       prices={[
         { service: "Lawn Mower Tune-Up (Push & Self-Propelled)", price: "$50 – $80" },

@@ -16,12 +16,12 @@ export default function LawnTurf() {
       imageAlt="Lawn care and turf management"
       ctaLabel="Request Pricing & Availability"
       bullets={[
-        "1. Lawn mowing & edging",
-        "2. Fertilization",
-        "3. Weed control",
-        "4. Aeration",
-        "5. Overseeding",
-        "6. Sod installation",
+        { title: "1. Lawn mowing & edging", description: "Regular cutting and clean edge lines along borders." },
+        { title: "2. Fertilization", description: "Seasonal nutrient treatments to keep grass healthy and green." },
+        { title: "3. Weed control", description: "Pre- and post-emergent herbicide applications." },
+        { title: "4. Aeration", description: "Core or spike aeration to reduce soil compaction." },
+        { title: "5. Overseeding", description: "Reseeding thin or bare patches to thicken turf." },
+        { title: "6. Sod installation", description: "Laying new turf for instant lawn coverage." },
       ]}
       note="Pricing varies by property size and scope. Contact for a quote. [FILLER PRICING]"
     />

@@ -2,12 +2,13 @@ import { Link } from "react-router-dom";
 import { SiteShell } from "./SiteShell";
 
 export type PriceRow = { service: string; price: string };
+export type ServiceBullet = { title: string; description: string };
 
 export function ServicePage(props: {
   title: string;
   subtitle: string;
   prices?: PriceRow[];
-  bullets?: string[];
+  bullets?: ServiceBullet[];
   note?: string;
   ctaLabel: string;
   heroImage?: string;
@@ -45,9 +46,12 @@ export function ServicePage(props: {
         {bullets && (
           <ul className="grid gap-3 sm:grid-cols-2">
             {bullets.map((b) => (
-              <li key={b} className="flex items-start gap-3 rounded-2xl border border-border bg-surface p-5">
-                <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-accent" />
-                <span className="text-brand-white/90">{b}</span>
+              <li key={b.title} className="flex items-start gap-3 rounded-2xl border border-border bg-surface p-5">
+                <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-accent" />
+                <div>
+                  <h3 className="font-display font-semibold text-brand-white">{b.title}</h3>
+                  <p className="mt-1 text-sm text-muted-foreground">{b.description}</p>
+                </div>
               </li>
             ))}
           </ul>

@@ -16,7 +16,7 @@ export default function PestControl() {
       imageAlt="Pest and grub control"
       ctaLabel="Request Pricing & Availability"
       bullets={[
-        "17. Pest & grub control",
+        { title: "17. Pest & grub control", description: "Treating soil and turf for damaging insects." },
       ]}
       note="Pricing varies by treatment. Contact for a quote. [FILLER PRICING]"
     />

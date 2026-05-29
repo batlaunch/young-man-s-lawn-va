@@ -104,8 +104,8 @@
   /* Light palette for bright sections (e.g. homepage) */
   --cream: #E4EFDD;        /* soft grass field */
   --cream-soft: #F1F7EC;   /* lighter grass tint */
-  --ink: #0F2018;
-  --ink-soft: #3F5A48;
+  --ink: #1c4332;
+  --ink-soft: #1c4332;
 }
 
 .dark {
@@ -134,7 +134,7 @@
   .font-display { font-family: var(--font-display); }
   .font-sans { font-family: var(--font-sans); }
   .text-gradient-grass {
-    background: linear-gradient(135deg, #95D5B2 0%, #52B788 100%);
+    background: linear-gradient(135deg, #1c4332 0%, #40916c 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;

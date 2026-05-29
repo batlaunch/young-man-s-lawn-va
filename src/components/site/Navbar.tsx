@@ -23,7 +23,7 @@ export function Navbar() {
   const [mobileServices, setMobileServices] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur-md">
+    <header className="fixed top-0 left-0 right-0 z-40 border-b border-border bg-background/85 backdrop-blur-md lg:sticky lg:left-auto lg:right-auto">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-4 py-3 lg:px-8">
         <Link to="/" aria-label="Young Man's Lawn Care home">
           <LogoPlaceholder small />

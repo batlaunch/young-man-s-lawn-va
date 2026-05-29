@@ -30,14 +30,16 @@ export function Navbar() {
           </Link>
           <div className="group relative">
             <button className="flex items-center gap-1 whitespace-nowrap text-xs font-medium text-brand-white/90 hover:text-accent sm:text-sm">
-              Services <ChevronDown className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+              Services <ChevronDown className="h-3.5 w-3.5 transition-transform duration-200 group-hover:rotate-180 sm:h-4 sm:w-4" />
             </button>
-            <div className="invisible absolute left-1/2 top-full z-50 mt-2 w-60 -translate-x-1/2 rounded-xl border border-border bg-surface p-2 opacity-0 shadow-xl transition-all duration-150 group-hover:visible group-hover:opacity-100">
-              {SERVICES.map((s) => (
-                <Link key={s.to} to={s.to} className="block rounded-lg px-3 py-2 text-sm text-brand-white/90 hover:bg-primary/40 hover:text-accent">
-                  {s.label}
-                </Link>
-              ))}
+            <div className="pointer-events-none absolute left-1/2 top-full z-50 w-60 -translate-x-1/2 pt-2 opacity-0 transition-all duration-200 group-hover:pointer-events-auto group-hover:opacity-100">
+              <div className="rounded-xl border border-border bg-surface p-2 shadow-xl">
+                {SERVICES.map((s) => (
+                  <Link key={s.to} to={s.to} className="block rounded-lg px-3 py-2 text-sm text-brand-white/90 hover:bg-primary/40 hover:text-accent">
+                    {s.label}
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
           {NAV.slice(1).map((n) => (

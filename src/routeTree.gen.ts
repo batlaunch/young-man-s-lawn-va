@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
@@ -19,6 +20,11 @@ import { Route as ServicesPressureWashingRouteImport } from './routes/services.p
 import { Route as ServicesLawnCareRouteImport } from './routes/services.lawn-care'
 import { Route as ServicesEngineRepairRouteImport } from './routes/services.engine-repair'
 
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const GalleryRoute = GalleryRouteImport.update({
   id: '/gallery',
   path: '/gallery',
@@ -71,6 +77,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/services/engine-repair': typeof ServicesEngineRepairRoute
   '/services/lawn-care': typeof ServicesLawnCareRoute
   '/services/pressure-washing': typeof ServicesPressureWashingRoute
@@ -82,6 +89,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/services/engine-repair': typeof ServicesEngineRepairRoute
   '/services/lawn-care': typeof ServicesLawnCareRoute
   '/services/pressure-washing': typeof ServicesPressureWashingRoute
@@ -94,6 +102,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/services/engine-repair': typeof ServicesEngineRepairRoute
   '/services/lawn-care': typeof ServicesLawnCareRoute
   '/services/pressure-washing': typeof ServicesPressureWashingRoute
@@ -107,6 +116,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/gallery'
+    | '/sitemap.xml'
     | '/services/engine-repair'
     | '/services/lawn-care'
     | '/services/pressure-washing'
@@ -118,6 +128,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/gallery'
+    | '/sitemap.xml'
     | '/services/engine-repair'
     | '/services/lawn-care'
     | '/services/pressure-washing'
@@ -129,6 +140,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/gallery'
+    | '/sitemap.xml'
     | '/services/engine-repair'
     | '/services/lawn-care'
     | '/services/pressure-washing'
@@ -141,6 +153,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
   GalleryRoute: typeof GalleryRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   ServicesEngineRepairRoute: typeof ServicesEngineRepairRoute
   ServicesLawnCareRoute: typeof ServicesLawnCareRoute
   ServicesPressureWashingRoute: typeof ServicesPressureWashingRoute
@@ -150,6 +163,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/gallery': {
       id: '/gallery'
       path: '/gallery'
@@ -221,6 +241,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
   GalleryRoute: GalleryRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   ServicesEngineRepairRoute: ServicesEngineRepairRoute,
   ServicesLawnCareRoute: ServicesLawnCareRoute,
   ServicesPressureWashingRoute: ServicesPressureWashingRoute,
